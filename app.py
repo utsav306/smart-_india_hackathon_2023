@@ -227,7 +227,7 @@ def forgot_password():
 
 
 
-@app.route('/chatbot')
+@app.route('/chatbot', method = ["GET","POST"])
 def chatbot():
     
     if 'user' in session:
@@ -251,7 +251,7 @@ def chatbot():
 
 
     else:
-        return render_template('login.html')
+        return render_template('chatbot.html')
 
 
 
