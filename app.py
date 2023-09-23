@@ -214,7 +214,7 @@ def livechat():
         else:
             first_name = user['displayName'].split()[0]
 
-        return render_template('chatbot.html', first_name=first_name)
+        return render_template('working.html', first_name=first_name)
 
     else:
         return render_template('working.html')
