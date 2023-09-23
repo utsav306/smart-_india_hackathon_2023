@@ -10,8 +10,8 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 
 firebaseConfig = {'apiKey': "AIzaSyAJA-UV_R0OHj06NK9LZa90pqTrNelopPc",
   'authDomain': "gyaan-connect-b7b08.firebaseapp.com",
- 'projectId': "gyaan-connect-b7b08",
- 'storageBucket': "gyaan-connect-b7b08.appspot.com",
+  'projectId': "gyaan-connect-b7b08",
+  'storageBucket': "gyaan-connect-b7b08.appspot.com",
   'messagingSenderId': "800780596390",
   'appId': "1:800780596390:web:4c4029a1f7d91eb3333067",
   'measurementId': "G-19P192XXE0",
@@ -28,36 +28,6 @@ auth = firebase.auth()
 app.secret_key = "SECRET_KEY"
 
 #-----------------------page routes-----------------------------------------
-
-#function for navbar
-def skeleton(webpage):
-    if 'user' in session:
-
-        #signed user
-    
-        user_id_token = session['user']["idToken"]
-        
-        auth.refresh(session['user']['refreshToken'])
-
-        user = auth.get_account_info(user_id_token)['users'][0]
-        
-        first_name = ""
-        
-        if "displayName" not in user:
-            first_name = "!"
-        else:
-            first_name = user['displayName'].split()[0]
-
-        return render_template(f'{webpage}.html', first_name=first_name)
-
-
-    else:
-
-        return render_template(f'{webpage}.html')
-
-
-
-
 
 @app.route('/')
 def home():
@@ -80,7 +50,7 @@ def home():
     
     else:
         #unsigned user
-        return render_template('index.html')
+        return render_template('index2.html')
 
 
 
@@ -104,7 +74,7 @@ def signup():
 
             
 
-            return redirect('/login')
+            return redirect('/login2')
 
             
         except Exception as e:
@@ -225,9 +195,61 @@ def forgot_password():
         return render_template('forgot_password.html')
 
 
+@app.route('/livechat')
+def livechat():
+    if 'user' in session:
+
+        #signed user    
+        
+        user_id_token = session['user']["idToken"]
+        
+        auth.refresh(session['user']['refreshToken'])
+
+        user = auth.get_account_info(user_id_token)['users'][0]
+        
+        first_name = ""
+        
+        if "displayName" not in user:
+            first_name = "!"
+        else:
+            first_name = user['displayName'].split()[0]
+
+        return render_template('chatbot.html', first_name=first_name)
+
+    else:
+        return render_template('working.html')
+    
 
 
-@app.route('/chatbot', method = ["GET","POST"])
+
+@app.route('/login2')
+def login2():
+    if 'user' in session:
+
+        #signed user    
+        
+        user_id_token = session['user']["idToken"]
+        
+        auth.refresh(session['user']['refreshToken'])
+
+        user = auth.get_account_info(user_id_token)['users'][0]
+        
+        first_name = ""
+        
+        if "displayName" not in user:
+            first_name = "!"
+        else:
+            first_name = user['displayName'].split()[0]
+
+        return render_template('login2.html', first_name=first_name)
+
+    else:
+        return render_template('login2.html')
+
+
+
+
+@app.route('/chatbot', methods = ["GET","POST"])
 def chatbot():
     
     if 'user' in session:
@@ -255,7 +277,7 @@ def chatbot():
 
 
 
-@app.route('/pageonwork')
+@app.route('/working')
 def working():
     if 'user' in session:
 
@@ -279,7 +301,9 @@ def working():
 
     else:
 
-        return redirect('working.html')    
+        return redirect('working.html') 
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

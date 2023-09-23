@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="/static/css/login2.css">
+</head>
+<body>
+
+
+    <div class="logo"><img src="/static/svg/logo.png" alt=""></div>
+        <div class="content"><p><u>Help us to Personalize your learning experience.....</u></p></div>
+
+    <form action="submit.php" method="POST">
+        <div class="form-row">
+          <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
+        
+        <div class="form-row">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+      
+        <div class="form-row">
+          <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
+        </div>
+      
+        <div class="form-row">
+          <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      
+        <div class="form-row">
+          <input type="text" id="place" name="place" placeholder="Place" required>
+        </div>
+      
+        <div class="form-row">
+          <input type="text" id="language" name="language" placeholder="Language Comfortable with" required>
+        </div>
+      
+        <div class="form-row">
+          <input type="text" id="course" name="course" placeholder="Course Currently Studying" required>
+        </div>
+        
+        <div class="form-row">
+          <select id="level" name="level" required>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+        
+        <div class="button-row">
+          <a href="{{ url_for('login') }}"><button type="button" class="save-button" onclick="{alert('Registered Successfully! Please login to Continue!')}"">Save and Continue</button></a>
+        </div>
+
+        <script>
+            ;
+        </script>        
+      
+      </form>
+    
+      
+      
+      
+</body>
+</html>

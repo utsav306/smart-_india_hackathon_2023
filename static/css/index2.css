@@ -1,3 +1,8 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@500&family=Raleway&family=Roboto:wght@300;500&display=swap');
+
+
+
 html{
     overflow-x: hidden;
   }
@@ -336,15 +341,29 @@ html{
     padding-top: 2rem;
     display: flex;
     justify-content: center;
+    font-size: 3rem;
+
   }
   .courses h1{
     margin-bottom: 2rem;
+    font-family: 'Raleway', sans-serif;
   }
+
+  .courses .int p{
+    font-size: 1.5rem;
+    font-family: 'Raleway', sans-serif;
+  }
+ 
   .courses p {
     margin-top: 2rem;
+    font-size: 1rem;
     display: flex;
+    margin-right: 10%;
+    margin-left: 10%;
     justify-content: center;
+    font-family: 'Raleway', sans-serif;
     margin-bottom: 3rem;
+    font-family: 'Raleway', sans-serif;
   }
   .btn-bottom-center {
     position: absolute;
@@ -965,13 +984,31 @@ html{
       background: #282828;
       color: white;
     }
-    .courses{
-      background-color: black;
-      
-    }
-    .courses h1{
-      color: white;
-    }
+/* Style paragraphs and lists within the .courses container */
+.courses p, .courses ul {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Add margin between paragraphs and list items */
+  }
+  
+  /* Style the h1 within the .courses container */
+  .courses h1 {
+    color: #333; /* Text color */
+    background-color: #f0f0f0; /* Background color */
+    text-align: center; /* Center-align the heading */
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  /* Style list items within the .courses container */
+  .courses ul li {
+    list-style-type: disc; /* Use disc bullets for list items */
+    margin-left: 20px; /* Add margin to the left of list items */
+  }
+  
+  
+
+
+    
   
     .search__input {
      

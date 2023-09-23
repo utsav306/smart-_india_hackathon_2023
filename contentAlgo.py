@@ -45,3 +45,5 @@ for link in csv_datasheet():
     course.append(link[5])
     level.append(link[6])
     
+
+print(sub,channel_link,rec_link,expertise,lang)
