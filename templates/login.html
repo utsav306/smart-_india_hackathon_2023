@@ -69,7 +69,7 @@
 
                     <!-- Display Login link -->
                     <li class="nav-item mr-5">
-                        <a href="/html/login.html" id="sign-in" class="nav-link py-2  px-5 my-0 text-black">
+                        <a href="{{url_for('login')}}" id="sign-in" class="nav-link py-2  px-5 my-0 text-black">
                             Log in
                         </a>
                     </li>
@@ -98,7 +98,7 @@
                 <input type="text" placeholder="Name" name = "newname" required/>
                 <input type="email" placeholder="Email" name = "newemail" required/>
                 <input type="password" placeholder="Password" minlength="6" name = "newpassword" required/>
-                <a href="{{url_for('login2')}}"><button>Sign Up</button></a>
+                <a href="{{url_for('personal_details')}}"><button>Sign Up</button></a>
                 {% if signup_display_error %}
                 <script>
                     alert("Sorry! {{ signup_error }}");

@@ -31,7 +31,7 @@ app.secret_key = "SECRET_KEY"
 
 @app.route('/')
 def home():
-    
+
     if 'user' in session:
 
         #signed user
@@ -47,10 +47,12 @@ def home():
         else:
             first_name = user['displayName'].split()[0]
         return render_template('index.html', first_name=first_name)
-    
+        
     else:
         #unsigned user
         return render_template('index2.html')
+
+
 
 
 
@@ -74,7 +76,7 @@ def signup():
 
             
 
-            return redirect('/login2')
+            return redirect('/personal_details')
 
             
         except Exception as e:
@@ -222,29 +224,10 @@ def livechat():
 
 
 
-@app.route('/login2')
-def login2():
-    if 'user' in session:
+@app.route('/personal_details')
+def personal_details():
 
-        #signed user    
-        
-        user_id_token = session['user']["idToken"]
-        
-        auth.refresh(session['user']['refreshToken'])
-
-        user = auth.get_account_info(user_id_token)['users'][0]
-        
-        first_name = ""
-        
-        if "displayName" not in user:
-            first_name = "!"
-        else:
-            first_name = user['displayName'].split()[0]
-
-        return render_template('login2.html', first_name=first_name)
-
-    else:
-        return render_template('login2.html')
+    return render_template('personal_details.html')
 
 
 
