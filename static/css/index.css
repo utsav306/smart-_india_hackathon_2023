@@ -647,6 +647,7 @@ html{
   .subscribe-form {
   position: relative;
   overflow: hidden;
+  opacity: 1;
   }
   .subscribe-form input {
   width: 100%;
@@ -1053,3 +1054,8 @@ html{
     color: #000;
   }
   
+
+
+
+
+  /* Add this in your existing CSS file */
