@@ -6,9 +6,26 @@ html{
   
     background-image: url('/static/images/bg.png');
     background-size: 100%;
-   
   
   }
+
+
+  #loading{
+    background: #000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-image: url('/static/svg/logo.png');
+    background-repeat: no-repeat;
+    background-size: 25rem;
+    background-position: center;
+    z-index: 99999999;
+    left: 0;
+    top: 0;
+   
+}
+
+
   
    header{
     
@@ -328,7 +345,7 @@ html{
     display: block;
    background: #fdf8ee ;
    
-    height: 40rem;
+    height: 50rem;
     
   }
   
@@ -344,7 +361,7 @@ html{
     margin-top: 2rem;
     display: flex;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
   .btn-bottom-center {
     position: absolute;
@@ -353,7 +370,40 @@ html{
     transform: translateX(-50%);
   }
   
-  
+  .courses .card {
+    border-radius: 1rem; /* You can adjust the value to increase or decrease the curvature */
+  }
+  .courses .youtube-video {
+    border-radius: 1rem 1rem 0 0; /* Applies only to the top corners of the youtube-video div */
+  }
+
+
+
+  .course_search
+{
+	padding-left: 68px;
+	padding-right: 68px;
+	margin-top: 2rem;
+}
+.course_search_form
+{
+	width: 100%;
+}
+.course_button
+{
+	position: relative;
+	width: 224px;
+	height: 50px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background: #ff8a00;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
   
   
   .premium {
@@ -376,6 +426,148 @@ html{
     margin-top: 2rem;
   }
   
+
+
+  .course_input
+  {
+    position: relative;
+    width: 22rem;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: #f2f1f8;
+    padding-left: 22px;
+  }
+  .course_search_form > div::after
+  {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: 4rem;
+    background: #ff6600;
+    content: '';
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+  .course_search_form > div:hover::after
+  {
+    visibility: hidden;
+    opacity: 1;
+  }
+  .course_input::-webkit-input-placeholder
+  {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    color: #6c6a74 !important;
+  }
+  .course_input:-moz-placeholder
+  {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    color: #6c6a74 !important;
+  }
+  .course_input::-moz-placeholder
+  {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    color: #6c6a74 !important;
+  } 
+  .course_input:-ms-input-placeholder
+  { 
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    color: #6c6a74 !important;
+  }
+  .course_input::input-placeholder
+  {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    color: #6c6a74 !important;
+  }
+  .courses_slider_container
+  {
+    width: 100%;
+    margin-top: 83px;
+   
+  }
+  .course_search_form {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+
+  style>
+  .input {
+    display: flex;
+  }
+
+  .course_input {
+    margin-right: 10px; /* Adjust the margin between input elements as needed */
+  }
+
+  .course_button {
+    margin-top: 2px;
+    margin-left: 3rem; /* Adjust the margin between input and button as needed */
+  }
+  .like button,
+  .dislike button {
+      border: none;
+      background: none;
+      cursor: pointer;
+  }
+
+  .like i,
+  .dislike i {
+      font-size: 24px; /* Adjust the size as needed */
+      color: orange; /* Set the color of the icons */
+  }
+
+  .like .badge,
+  .dislike .badge {
+      background-color: orange; /* Set the background color of the badge */
+      color: white; /* Set the text color of the badge */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   .premium h1 {
     margin-bottom: 2rem;
   }

@@ -34,3 +34,8 @@ darkTab.addEventListener('click', (e) => {
   setMode();
 });
 
+var preload= document.getElementById("loading")
+function onloade() {
+  // You can perform additional actions here if needed
+  document.getElementById("loading").style.display = "none"; // Hide the loading div
+}

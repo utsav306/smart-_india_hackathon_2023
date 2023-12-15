@@ -21,8 +21,10 @@
 
 
 
- 
-<header>
+ <body onload="onloade()">
+  <div id="loading">
+  </div>
+  <header>
   
   <nav>
       <div class="navbar navbar-expand-lg fixed-top bg-white my-0"  >
@@ -95,7 +97,7 @@
 
 
 
-< id="body-content">
+<id="body-content">
 
 <div class="land">
 <div class="hero">
@@ -117,82 +119,219 @@
 
 
 
+
+
 <div class="courses" id="courses">
-  <h1>Recommended Videos are</h1>
-  <div class="container card-container">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <div class="section_title text-center pt-5"><h2>Choose your course</h2></div>
+      <div class="section_subtitle pl-7 pt-2">Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="course_search mb-5">
+        <form action="#" class="course_search_form d-flex flex-md-row flex-column align-items-start justify-content-center">
+          <div class="input d-flex justify-content-between">
+            <div><input type="text" class="course_input" placeholder="Course" required="required"></div>
+            <div class="space" style="width: 7rem;"></div>
+            <div><input type="text" class="course_input" placeholder="Level" required="required"></div>
+          </div>
+          <div class="space" style="width: 5rem;"></div>
+          <button class="course_button"><span>search course</span><span class="button_arrow"></i></span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container card-container mt-3">
     <div class="container">
       <div class="row g-4 justify-content-center">
         <!-- First Card -->
     <!-- First Card -->
-<div class="col-md-3">
-  <div class="card">
-    <!-- Embed a YouTube video using the YouTube Embedded Player -->
-    <div class="youtube-video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/_bwgS5_Q7LQ?si=hHVsE2_kwdcogHFD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="col-md-3 mb-3">
+      <div class="card">
+        <!-- Embed a YouTube video using the YouTube Embedded Player with curved borders -->
+        <div class="youtube-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/IDiTQAUHsjo?si=7-cV9sAuXHJ2YaOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    
+        <!-- Like and Dislike buttons in the same line -->
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div class="like">
+            <button type="button">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <span class="badge badge-dark">1000</span>
+            </button>
+        </div>
+        <div class="dislike">
+            <button type="button">
+                <i class="fas fa-thumbs-down"></i>
+                <span class="badge badge-dark">50</span>
+            </button>
+        </div>
+        </div>
+    
+        <!-- Course Heading and Prof Details -->
+        <div class="card-body">
+          <h5 class="card-title">Video Title 1</h5>
+          <p class="card-text mb-1">Platform: YouTube</p>
+          <!-- Additional content as needed -->
+          <div class="d-flex align-items-center">
+            <div class="rounded-circle profile-icon"></div>
+            <p class="mb-0 ml-2 mb-3">By Prof. John Doe</p>
+          </div>
+        </div>
+    
+        <!-- "Go to" button -->
+       
+          <a href="https://youtu.be/1lDfp1j9yzA?si=brlgWmVkZiN_0_lF" class="btn btn-warning btn-bottom-center custom-btn">Go to</a>
+     
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">Video Title 1</h5>
-      <p class="card-text">Platform: YouTube</p>
-      <p class="card-text">Likes: 1000 Dislikes: 50</p>
-      <a href="https://youtu.be/wGLTV8MgLlA?si=OaR9ucEz0EWDF3mf"><button type="button" class="btn btn-warning btn-bottom-center custom-btn">Go to</button></a>
-    </div>
-  </div>
-</div>
 
 
         <!-- Second Card -->
- <!-- First Card -->
-<div class="col-md-3">
-  <div class="card">
-    <!-- Embed a YouTube video using the YouTube Embedded Player -->
-    <div class="youtube-video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/IDiTQAUHsjo?si=7-cV9sAuXHJ2YaOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Video Title 1</h5>
-      <p class="card-text">Platform: YouTube</p>
-      <p class="card-text">Likes: 1000 Dislikes: 50</p>
-      <a href="https://youtu.be/1lDfp1j9yzA?si=brlgWmVkZiN_0_lF"><button type="button" class="btn btn-warning btn-bottom-center custom-btn">Go to</button></a>
-    </div>
-  </div>
-</div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <!-- Embed a YouTube video using the YouTube Embedded Player with curved borders -->
+            <div class="youtube-video">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/IDiTQAUHsjo?si=7-cV9sAuXHJ2YaOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        
+            <!-- Like and Dislike buttons in the same line -->
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div class="like">
+                <button type="button">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <span class="badge badge-dark">1000</span>
+                </button>
+            </div>
+            <div class="dislike">
+                <button type="button">
+                    <i class="fas fa-thumbs-down"></i>
+                    <span class="badge badge-dark">50</span>
+                </button>
+            </div>
+            </div>
+        
+            <!-- Course Heading and Prof Details -->
+            <div class="card-body">
+              <h5 class="card-title">Video Title 1</h5>
+              <p class="card-text mb-1">Platform: YouTube</p>
+              <!-- Additional content as needed -->
+              <div class="d-flex align-items-center">
+                <div class="rounded-circle profile-icon"></div>
+                <p class="mb-0 ml-2 mb-3">By Prof. John Doe</p>
+              </div>
+            </div>
+        
+            <!-- "Go to" button -->
+           
+              <a href="https://youtu.be/1lDfp1j9yzA?si=brlgWmVkZiN_0_lF" class="btn btn-warning btn-bottom-center custom-btn">Go to</a>
+         
+          </div>
+        </div>
+        
+        
+        
+        
+
 
 
         <!-- Third Card -->
       <!-- First Card -->
-<div class="col-md-3">
-  <div class="card">
-    <!-- Embed a YouTube video using the YouTube Embedded Player -->
-    <div class="youtube-video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/wGLTV8MgLlA?si=ozac_DbTzImc3_XH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Video Title 1</h5>
-      <p class="card-text">Platform: YouTube</p>
-      <p class="card-text">Likes: 1000 Dislikes: 50</p>
-      <a href="https://youtu.be/2QsVqsPrlm8?si=zftuDaW_S8os2eqd"><button type="button" class="btn btn-warning btn-bottom-center custom-btn">Go to</button></a>
-    </div>
-  </div>
-</div>
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <!-- Embed a YouTube video using the YouTube Embedded Player with curved borders -->
+          <div class="youtube-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IDiTQAUHsjo?si=7-cV9sAuXHJ2YaOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+      
+          <!-- Like and Dislike buttons in the same line -->
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div class="like">
+              <button type="button">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                  <span class="badge badge-dark">1000</span>
+              </button>
+          </div>
+          <div class="dislike">
+              <button type="button">
+                  <i class="fas fa-thumbs-down"></i>
+                  <span class="badge badge-dark">50</span>
+              </button>
+          </div>
+          </div>
+      
+          <!-- Course Heading and Prof Details -->
+          <div class="card-body">
+            <h5 class="card-title">Video Title 1</h5>
+            <p class="card-text mb-1">Platform: YouTube</p>
+            <!-- Additional content as needed -->
+            <div class="d-flex align-items-center">
+              <div class="rounded-circle profile-icon"></div>
+              <p class="mb-0 ml-2 mb-3">By Prof. John Doe</p>
+            </div>
+          </div>
+      
+          <!-- "Go to" button -->
+         
+            <a href="https://youtu.be/1lDfp1j9yzA?si=brlgWmVkZiN_0_lF" class="btn btn-warning btn-bottom-center custom-btn">Go to</a>
+       
+        </div>
+      </div>
 
         
         <!-- Add more cards here -->
 
 <!-- First Card -->
-<div class="col-md-3">
+<div class="col-md-3 mb-3">
   <div class="card">
-    <!-- Embed a YouTube video using the YouTube Embedded Player -->
+    <!-- Embed a YouTube video using the YouTube Embedded Player with curved borders -->
     <div class="youtube-video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/UCcaU7a5P-o?si=DALu6mX9zoX_MGU5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/IDiTQAUHsjo?si=7-cV9sAuXHJ2YaOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
+
+    <!-- Like and Dislike buttons in the same line -->
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <div class="like">
+        <button type="button">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <span class="badge badge-dark">1000</span>
+        </button>
+    </div>
+    <div class="dislike">
+        <button type="button">
+            <i class="fas fa-thumbs-down"></i>
+            <span class="badge badge-dark">50</span>
+        </button>
+    </div>
+    </div>
+
+    <!-- Course Heading and Prof Details -->
     <div class="card-body">
       <h5 class="card-title">Video Title 1</h5>
-      <p class="card-text">Platform: YouTube</p>
-      <p class="card-text">Likes: 1000 Dislikes: 50</p>
-      <a href="https://youtu.be/2QsVqsPrlm8?si=zftuDaW_S8os2eqd"><button type="button" class="btn btn-warning btn-bottom-center custom-btn">Go to</button></a>
+      <p class="card-text mb-1">Platform: YouTube</p>
+      <!-- Additional content as needed -->
+      <div class="d-flex align-items-center">
+        <div class="rounded-circle profile-icon"></div>
+        <p class="mb-0 ml-2 mb-3">By Prof. John Doe</p>
+      </div>
     </div>
+
+    <!-- "Go to" button -->
+   
+      <a href="https://youtu.be/1lDfp1j9yzA?si=brlgWmVkZiN_0_lF" class="btn btn-warning btn-bottom-center custom-btn">Go to</a>
+ 
   </div>
 </div>
+
+
+
+
 
 
 
@@ -207,6 +346,8 @@
 
 
   
+
+
 
 
 <div class="premium">
