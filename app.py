@@ -286,7 +286,12 @@ def working():
 
         return redirect('working.html') 
 
+@app.route("/teaher_login", methods = ['GET'])
+def teacher_login():
 
+
+    print(request.get_data())
+    return render_template('teacher_login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

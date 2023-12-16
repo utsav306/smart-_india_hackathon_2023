@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/static/css/detailspic.css"><!--chnage to pyhton code-->
+    <link rel="stylesheet" href="/static/css/teachers_details.css"><!--chnage to pyhton code-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 
@@ -21,9 +21,7 @@
                         <!-- Profile picture image-->
                         <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                         <!-- Profile picture help block-->
-                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                        <!-- Profile picture upload button-->
-                        <button class="btn btn-primary" type="button">Upload new image</button>
+                      
                     </div>
                 </div>
             </div>
@@ -58,7 +56,10 @@
                                     <label class="small mb-1" for="inputOrgName">University name</label>
                                     <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your University name" value="">
                                 </div>
-                                <!-- Form Group (location)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputExperience">How much experience do you have?</label>
+                                    <input class="form-control" id="inputExperience" type="text" placeholder="15" value="">
+                                </div>
                                 <div class="mb-3">
                                     <label class="small mb-1" for="selectGender">Select your Gender</label>
                                     <select class="form-control" id="selectGender" name="selectedGender">
@@ -71,6 +72,9 @@
                                     <label class="small mb-1" for="inputLocation">Location</label>
                                     <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="">
                                 </div>
+                                
+                              
+                              
                             </div>
                             <!-- Form Group (email address)-->
                             <div class="mb-3">
@@ -93,16 +97,22 @@
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (current course)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputPhone">Enrolled in</label>
-                                    <input class="form-control" id="inputPhone" type="text" placeholder="Enter your course " value="">
+                                    <label class="small mb-1" for="inputExpertise">Expertise in </label>
+                                    <input class="form-control" id="inputExpertise" type="text" placeholder="Enter your Expertise " value="">
                                 </div>
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputBirthday">Topics interested</label>
-                                    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your area of interest" value="">
+                                    <label class="small mb-1" for="selectLang">Choose the language in which you want to teach</label>
+                                    <select class="form-control" id="selectLang" name="selectedLanguage">
+                                        <!-- Add options for different languages -->
+                                        <option value="english">English</option>
+                                        <option value="spanish">Spanish</option>
+                                        <option value="french">French</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
                                 </div>
                             </div>
-                                  <div class="mb-3">
+                       <!--     <div class="mb-3">
                                 <label class="small mb-1" for="selectLevel">Select your Level</label>
                                 <select class="form-control" id="selectLevel" name="selectedLevel">
                                     <option value="beginner">Beginner</option>
@@ -110,7 +120,8 @@
                                     <option value="advanced">Advanced</option>
                                      Add more options as needed 
                                 </select>
-                            </div>
+                            </div> -->
+                            
                             <!-- Save changes button-->
                             <button class="btn btn-primary" type="button">Save changes</button>
                         </form>
