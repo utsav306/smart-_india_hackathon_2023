@@ -11,14 +11,15 @@ html{
 
 
   #loading{
-    background: #000;
+    background: blur;
     height: 100vh;
     width: 100%;
     position: fixed;
-    background-image: url('/static/svg/logo.png');
+    background-image: url('/static/images/preloader.gif');
     background-repeat: no-repeat;
     background-size: 25rem;
     background-position: center;
+   
     z-index: 99999999;
     left: 0;
     top: 0;
