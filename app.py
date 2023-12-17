@@ -66,7 +66,7 @@ def signup():
         newname = request.form['newname']
         newemail = request.form['newemail']
         newpassword = request.form['newpassword']
-
+        is_teacher = 'flag' in request.form
 
         try:
             
@@ -75,9 +75,11 @@ def signup():
             auth.update_profile(user["idToken"], display_name = newname)
 
             
-
-            return redirect('/personal_details')
-
+            if is_teacher==True:
+                return(render_template('teacher_login.html'))
+            else:
+                return(render_template('personal_details.html'))
+           
             
         except Exception as e:
             
@@ -292,6 +294,8 @@ def teacher_login():
 
     print(request.get_data())
     return render_template('teacher_login.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
