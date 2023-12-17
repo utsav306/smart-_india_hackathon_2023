@@ -11,7 +11,7 @@ html{
 
 
   #loading{
-    background: blur;
+    background: #000;
     height: 100vh;
     width: 100%;
     position: fixed;

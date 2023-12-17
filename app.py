@@ -46,7 +46,13 @@ def home():
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
-        return render_template('index.html', first_name=first_name)
+        dynamic_button_id ="hello"
+        video2="https://www.edamam.com/"
+        title2=" am title 2"
+        print(video2)
+        print(dynamic_button_id)
+
+        return render_template('index.html', first_name=first_name,video2=video2, dynamic_button_id=dynamic_button_id,title2=title2)
         
     else:
         #unsigned user

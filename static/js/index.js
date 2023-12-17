@@ -39,3 +39,10 @@ function onloade() {
   // You can perform additional actions here if needed
   document.getElementById("loading").style.display = "none"; // Hide the loading div
 }
+
+var dynamicButtonId = "your_dynamic_button_id";
+
+// Set the dynamic ID to the "Go to" button
+document.getElementById("goToButton1").id = dynamicButtonId;
+console.log(document.getElementById("goToButton1"))
+

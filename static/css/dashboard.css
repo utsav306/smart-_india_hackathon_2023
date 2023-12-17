@@ -233,3 +233,9 @@ body{
 .shadow-none {
     box-shadow: none!important;
 }
+
+
+.btn-custom {
+  background-color: orange !important;
+  /* You can add additional styles if needed */
+}
