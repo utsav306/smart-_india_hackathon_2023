@@ -46,13 +46,20 @@ def home():
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
-        dynamic_button_id ="hello"
-        video2="https://www.edamam.com/"
-        title2=" am title 2"
-        print(video2)
-        print(dynamic_button_id)
 
-        return render_template('index.html', first_name=first_name,video2=video2, dynamic_button_id=dynamic_button_id,title2=title2)
+        button1id ="hello"
+        video1="https://www.edamam.com/"
+        title1=" I am title 1"
+        button2id ="hello"
+        video2="https://www.edamam.com/"
+        title2=" I am title 2"
+        
+
+
+        print(video2)
+
+
+        return render_template('index.html', first_name=first_name,video2=video2, button2id=button2id,title2=title2,video1=video1, button1id=button1id,title1=title1)
         
     else:
         #unsigned user
@@ -167,13 +174,15 @@ def dashboard():
         user = auth.get_account_info(user_id_token)['users'][0]
         
         first_name = ""
+        login_name="Utsav"
+        login_email="kkk.@"
         
         if "displayName" not in user:
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
 
-        return render_template('dashboard.html', first_name=first_name)
+        return render_template('dashboard.html', first=first_name,login=login_name,login_email=login_email)
 
 
     else:

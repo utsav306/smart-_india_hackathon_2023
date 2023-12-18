@@ -28,7 +28,7 @@
                         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                             <ul id="nav-length" class="navbar-nav justify-content-end border-2 text-center">
                                 <li class="nav-item mr-5">
-                                    <a href="#body-content" class="nav-link border-hover my-2 py-0 text-black">Home</a>
+                                    <a href="{{url_for('home')}}" class="nav-link border-hover my-2 py-0 text-black">Home</a>
                                 </li>
                                 <li class="nav-item mr-5">
                                     <a href="#" class="nav-link border-hover py-0 my-2 text-black">About Us</a>
@@ -41,15 +41,15 @@
                                   <a href="#dark" id="dark-mode-toggle" class="nav-link border-hover my-2 py-0 text-black">Dark</a>
                                 </li> -->
                               
-                              <li class="nav-item mr-5">
+                           <!--   <li class="nav-item mr-5">
                                   <a href="{{url_for('chatbot')}}" class="nav-link border-hover my-2 py-0 text-black">ChatBot</a>
-                              </li>
+                              </li>-->
                                 <li class="nav-item mr-5">
                                     <a href="#footer" class="nav-link border-hover  my-2 py-0 text-black">Contact Us</a>
                                 </li>
-                                <li class="nav-item mr-5">
+                              <!--  <li class="nav-item mr-5">
                                     <a href="#" class="nav-link border-hover  my-2 py-0 text-black">Dashboard</a>
-                                </li>
+                                </li>-->
                                
                                 <!-- Display Dashboard link and user's first initial -->
                               <!--  <li class="nav-item mr-3">
@@ -132,8 +132,8 @@
                         <div class="col-sm-3">
                           <h6 class="mb-0">Full Name</h6>
                         </div>
-                        <div class="col-sm-9 text-secondary">
-                          Kenneth Valdez
+                        <div class="col-sm-9 text-secondary" id="LoginName">
+                          {{login}}
                         </div>
                       </div>
                       <hr>
@@ -142,7 +142,7 @@
                           <h6 class="mb-0">Email</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          fip@jukmuh.al
+                          {{login_email}}
                         </div>
                       </div>
                       <hr>

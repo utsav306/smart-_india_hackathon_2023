@@ -40,7 +40,7 @@
               <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                   <ul id="nav-length" class="navbar-nav justify-content-end border-2 text-center">
                       <li class="nav-item mr-5">
-                          <a href="#body-content" class="nav-link border-hover my-2 py-0 text-black">Home</a>
+                          <a href="{{url_for('home')}}" class="nav-link border-hover my-2 py-0 text-black">Home</a>
                       </li>
                       <li class="nav-item mr-5">
                           <a href="#" class="nav-link border-hover py-0 my-2 text-black">About Us</a>
@@ -53,14 +53,14 @@
                         <a href="#dark" id="dark-mode-toggle" class="nav-link border-hover my-2 py-0 text-black">Dark</a>
                       </li> -->
                     
-                    <li class="nav-item mr-5">
+                   <!-- <li class="nav-item mr-5">
                         <a href="{{url_for('chatbot')}}" class="nav-link border-hover my-2 py-0 text-black">ChatBot</a>
-                    </li>
+                    </li>-->
                       <li class="nav-item mr-5">
                           <a href="#footer" class="nav-link border-hover  my-2 py-0 text-black">Contact Us</a>
                       </li>
                       <li class="nav-item mr-5">
-                          <a href="#" class="nav-link border-hover  my-2 py-0 text-black">Dashboard</a>
+                          <a href="{{url_for('dashboard')}}" class="nav-link border-hover  my-2 py-0 text-black">Dashboard</a>
                       </li>
                      
                       <!-- Display Dashboard link and user's first initial -->
@@ -177,7 +177,7 @@
     
         <!-- Course Heading and Prof Details -->
         <div class="card-body">
-          <h5 class="card-title">Video Title 1</h5>
+          <h5 class="card-title">{{title1}}</h5>
           <p class="card-text mb-1">Platform: YouTube</p>
           <!-- Additional content as needed -->
           <div class="d-flex align-items-center">
@@ -188,7 +188,7 @@
     
         <!-- "Go to" button -->
        
-          <a href="https://youtu.be/1lDfp1j9yzA?si=brlgWmVkZiN_0_lF" class="btn btn-warning btn-bottom-center custom-btn">Go to</a>
+          <a href="{video1}" class="btn btn-warning btn-bottom-center custom-btn" id="{{ button1id }}">Go to</a>
      
       </div>
     </div>
@@ -234,7 +234,7 @@
         
             <!-- "Go to" button -->
            
-              <a href="{{video2}}" class="btn btn-warning btn-bottom-center custom-btn" id="{{ dynamic_button_id }}">Go to</a>
+              <a href="{{video2}}" class="btn btn-warning btn-bottom-center custom-btn" id="{{ button2id }}">Go to</a>
          
           </div>
         </div>
