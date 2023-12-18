@@ -1,0 +1,55 @@
+body {
+  background-image: url("/static/images/bg.png");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.head {
+  margin-top: 5rem;
+  text-align: center;
+  /* Center the h1 text horizontally */
+}
+
+.btn-bottom-center {
+  position: relative;
+  /* Use relative positioning for button container */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+  /* Add some top margin for spacing */
+}
+
+h1 {
+  margin-bottom: 4rem;
+  font-size: 2.5rem;
+  /* Adjust the font size as needed */
+  text-align: center;
+  /* Center the h1 text horizontally */
+}
+
+.row {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  /* Center the row horizontally */
+}
+
+.custom-btn {
+  background-color: orange !important;
+  border-radius: 30px !important;
+  width: 8rem !important;
+  height: 2.5rem !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .head h1 {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+  }
+
+  .row {
+    margin-bottom: 2rem;
+  }
+}
