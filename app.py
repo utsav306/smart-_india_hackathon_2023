@@ -19,13 +19,8 @@ firebaseConfig = {'apiKey': "AIzaSyAJA-UV_R0OHj06NK9LZa90pqTrNelopPc",
   'databaseURL': ""}
 
 
-#--------------------------session duration handling-------------------------
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
 app.permanent_session_lifetime = timedelta(days=31)
-
-
-#-------------------------------------------------------------------------------
-
 
 firebase = initialize_app(firebaseConfig)
 
@@ -54,13 +49,7 @@ def home():
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
-        dynamic_button_id ="hello"
-        video2="https://www.edamam.com/"
-        title2=" am title 2"
-        print(video2)
-        print(dynamic_button_id)
-
-        return render_template('index.html', first_name=first_name,video2=video2, dynamic_button_id=dynamic_button_id,title2=title2)
+        return render_template('index.html', first_name=first_name)
         
     else:
         #unsigned user
@@ -80,7 +69,7 @@ def signup():
         newname = request.form['newname']
         newemail = request.form['newemail']
         newpassword = request.form['newpassword']
-        is_teacher = 'flag' in request.form
+
 
         try:
             
@@ -89,11 +78,9 @@ def signup():
             auth.update_profile(user["idToken"], display_name = newname)
 
             
-            if is_teacher==True:
-                return(render_template('teacher_login.html'))
-            else:
-                return(render_template('personal_details.html'))
-           
+
+            return redirect('/personal_details')
+
             
         except Exception as e:
             
@@ -240,7 +227,7 @@ def livechat():
 
 
 
-@app.route('/personal_details')
+@app.route('/personal_details', methods = ['GET','POST'])
 def personal_details():
 
     return render_template('personal_details.html')
@@ -298,16 +285,8 @@ def working():
         return render_template('working.html', first_name=first_name)
 
 
-    else:
 
         return redirect('working.html') 
-
-@app.route("/teaher_login", methods = ['GET'])
-def teacher_login():
-
-
-    print(request.get_data())
-    return render_template('teacher_login.html')
 
 
 
