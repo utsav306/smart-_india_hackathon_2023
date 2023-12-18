@@ -88,3 +88,23 @@ $(".previous").click(function () {
     }
   );
 });
+
+
+// Add this in your existing JavaScript file
+
+document.addEventListener('DOMContentLoaded', function () {
+  const chatbotContainer = document.querySelector('.chatbot-container');
+  const chatbotToggler = document.querySelector('.chatbot-toggler');
+  const chatbot = document.querySelector('.chatbot');
+  const closeBtn = document.querySelector('.close-btn');
+
+  chatbotToggler.addEventListener('click', function () {
+    chatbot.style.display = 'block';
+  });
+
+  closeBtn.addEventListener('click', function () {
+    chatbot.style.display = 'none';
+  });
+});
+
+

@@ -1,0 +1,241 @@
+header{
+    
+    background: white;
+    width: 185rem !important;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    
+   }
+  
+  nav {
+    
+    background: rgba(0, 0, 0, 0.5);
+    margin-left: 50%;
+    height:3rem;
+    
+  }
+  .navbar{
+    height: 5rem;
+    margin-top: 1rem;
+    background: white;
+  }
+  
+  .brand1 img{
+    height: 7rem;
+    width: 7rem;
+    margin-left: 7rem;
+    margin-top: 0;
+    padding: 0;
+  }
+  
+  .brand {
+    color: #FF9138;
+  }
+  
+  .border-hover {
+    border-top: 5px solid transparent;
+    transform: translateY(-4px);
+  }
+  
+  .border-hover:hover {
+    border-top: 5px solid #ff9138;
+    transform: translateY(-4px);
+    
+  }
+  
+  #sign-in {
+    background: #FF9138;
+    border-radius: 20px;
+    margin-top: 0% !important;
+    
+  }
+  
+  .navbar-toggler {
+    border: 3px solid #FF9138;
+  }
+  
+  .navbar-collapse {
+    z-index: 10000; /* Set a high z-index value for the hamburger menu */
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url(/static_files/svgs3/list.svg)
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  
+  #nav-length {
+    width: 90%;
+  }
+  .logo img{
+    height: 7rem !important;
+    width: 8rem !important;
+  }
+  
+  .log img{
+    height: 8rem;
+    width: 8rem;
+    margin-left: 5rem;
+    margin-top: 1rem;
+   
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  /* button */ 
+  
+  .custom-btn {
+    background-color: orange !important;
+    border-radius: 30px !important;
+    width: 8rem !important;
+    height: 2.5rem !important;
+  
+  }
+  
+  
+  
+  
+  
+  .initial-circle {
+    width: 35px;
+    height: 35px;
+    background-color: #ffa500;
+    border-radius: 50%;
+    color: rgb(0, 5, 60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    top: -5px;
+    box-shadow: 0 0 10px 1px #442d03
+  }
+  
+  .nav-link .d-flex .ml-2 {
+    position: relative;
+    top: -5px;
+  }
+  
+  .row.gutters-sm {
+    margin-top: 6rem;
+    
+  }
+  @media screen and (max-width : 768px) {
+    .log{
+      display: none;
+      }
+      .navbar-collapse {
+        z-index: 10000; /* Set a high z-index value for the hamburger menu */
+      }
+      
+      
+    }
+    @media screen and (max-width : 991px) {
+      .log{
+        display: none;
+        }
+        .navbar-collapse {
+            z-index: 10000; /* Set a high z-index value for the hamburger menu */
+          }
+          
+      }
+      @media screen and (max-width : 680px) {
+        .log{
+          display: none;
+          }
+          .navbar-collapse {
+            z-index: 10000; /* Set a high z-index value for the hamburger menu */
+          }
+          
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+    margin-top:20px;
+    color: #1a202c;
+    text-align: left;
+    background-color: #e2e8f0;    
+}
+.main-body {
+    padding: 15px;
+}
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+    background-color: #e2e8f0;
+}
+.h-100 {
+    height: 100%!important;
+}
+.shadow-none {
+    box-shadow: none!important;
+}
+
+
+.btn-custom {
+  background-color: orange !important;
+  /* You can add additional styles if needed */
+}

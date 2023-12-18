@@ -88,24 +88,35 @@
     <div class="container" id="container">
         <!--____CODE FOR TAKING FORM SUBMISSION AND REGISTERING USER____-->
         <div class="form-container sign-up-container">
-            <form method = "POST" action="{{url_for('signup')}}">
-                <h1>Create Account</h1>
-                <div class="soc  ial-container">
+
+            <form method="POST" action="{{url_for('signup')}}">
+                <h1 style="padding-top: 2rem;">Create Account</h1>
+                <div class="social-container">
+
                     <a href="#" class="social"><i class="fab fa-google"></i></a>
                 </div>
-
+        
                 <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" name = "newname" required/>
-                <input type="email" placeholder="Email" name = "newemail" required/>
-                <input type="password" placeholder="Password" minlength="6" name = "newpassword" required/>
-                <a href="{{url_for('personal_details')}}"><button>Sign Up</button></a>
+                <input type="text" placeholder="Name" name="newname" required/>
+                <input type="email" placeholder="Email" name="newemail" required/>
+                <input type="password" placeholder="Password" minlength="6" name="newpassword" required/>
+                <div class="mini-checkbox-container">
+                    <input type="checkbox" id="flag" name="flag">
+                    <label for="type" id="type">Are you a teacher??</label>
+                </div>
+                <a href="{{url_for('personal_details')}}"><button>Sign Up as student</button></a>
+               <!-- <a href="{{url_for('teacher_login')}}"><button>Sign Up as Teacher</button></a> -->
+                
+        
                 {% if signup_display_error %}
+                <!-- <a href="{{url_for('teacher_login')}}"> <button class="ghost" id="teacherButton">Teacher sign Up</button></a> -->
                 <script>
                     alert("Sorry! {{ signup_error }}");
                 </script>
                 {% endif %}
             </form>
         </div>
+        
         <div class="form-container sign-in-container">
             <!--__________CODE FOR TAKING FORM SUBMISSION AND VALIDATING_______-->
             <form method = "POST" action="{{url_for('login')}}">
@@ -118,6 +129,7 @@
                 <input type="password" name="password" placeholder="Password" required/>
                 <a href="{{url_for('forgot_password')}}">Forgot your password?</a>
                 <button type="submit">Sign In</button>
+               
                 {% if login_display_error %}
                 <script>
                     alert("Sorry! {{ login_error }}");
@@ -131,12 +143,14 @@
                 <div class="overlay-panel overlay-left">
                     <h1>Welcome Back!</h1>
                     <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
+                      <button class="ghost" id="signIn">Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Hello, Friend!</h1>
                     <p>Enter your personal details and start journey with us</p>
                     <button class="ghost" id="signUp">Sign Up</button>
+                    
+                
                 </div>
             </div>
         </div>

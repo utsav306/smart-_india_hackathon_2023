@@ -49,7 +49,20 @@ def home():
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
-        return render_template('index.html', first_name=first_name)
+
+        button1id ="hello"
+        video1="https://www.edamam.com/"
+        title1=" I am title 1"
+        button2id ="hello"
+        video2="https://www.edamam.com/"
+        title2=" I am title 2"
+        
+
+
+        print(video2)
+
+
+        return render_template('index.html', first_name=first_name,video2=video2, button2id=button2id,title2=title2,video1=video1, button1id=button1id,title1=title1)
         
     else:
         #unsigned user
@@ -69,7 +82,7 @@ def signup():
         newname = request.form['newname']
         newemail = request.form['newemail']
         newpassword = request.form['newpassword']
-
+        is_teacher = 'flag' in request.form
 
         try:
             
@@ -78,9 +91,11 @@ def signup():
             auth.update_profile(user["idToken"], display_name = newname)
 
             
-
-            return redirect('/personal_details')
-
+            if is_teacher==True:
+                return(render_template('teacher_login.html'))
+            else:
+                return(render_template('personal_details.html'))
+           
             
         except Exception as e:
             
@@ -162,13 +177,15 @@ def dashboard():
         user = auth.get_account_info(user_id_token)['users'][0]
         
         first_name = ""
+        login_name="Utsav"
+        login_email="kkk.@"
         
         if "displayName" not in user:
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
 
-        return render_template('dashboard.html', first_name=first_name)
+        return render_template('dashboard.html', first=first_name,login=login_name,login_email=login_email)
 
 
     else:
@@ -287,6 +304,13 @@ def working():
 
 
         return redirect('working.html') 
+
+@app.route("/teaher_login", methods = ['GET'])
+def teacher_login():
+
+
+    print(request.get_data())
+    return render_template('teacher_login.html')
 
 
 
