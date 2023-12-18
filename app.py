@@ -1,6 +1,7 @@
 from flask import *
 from pyrebase import *
 import requests
+from datetime import timedelta
 
 #---------------initializeing application------------------------
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -18,6 +19,8 @@ firebaseConfig = {'apiKey': "AIzaSyAJA-UV_R0OHj06NK9LZa90pqTrNelopPc",
   'databaseURL': ""}
 
 
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
+app.permanent_session_lifetime = timedelta(days=31)
 
 firebase = initialize_app(firebaseConfig)
 
@@ -241,7 +244,7 @@ def livechat():
 
 
 
-@app.route('/personal_details')
+@app.route('/personal_details', methods = ['GET','POST'])
 def personal_details():
 
     return render_template('personal_details.html')
@@ -299,7 +302,6 @@ def working():
         return render_template('working.html', first_name=first_name)
 
 
-    else:
 
         return redirect('working.html') 
 
