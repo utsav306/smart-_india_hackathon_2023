@@ -1,6 +1,7 @@
 from flask import *
 from pyrebase import *
 import requests
+from datetime import timedelta
 
 #---------------initializeing application------------------------
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -17,6 +18,13 @@ firebaseConfig = {'apiKey': "AIzaSyAJA-UV_R0OHj06NK9LZa90pqTrNelopPc",
   'measurementId': "G-19P192XXE0",
   'databaseURL': ""}
 
+
+#--------------------------session duration handling-------------------------
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
+app.permanent_session_lifetime = timedelta(days=31)
+
+
+#-------------------------------------------------------------------------------
 
 
 firebase = initialize_app(firebaseConfig)
@@ -46,7 +54,13 @@ def home():
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
-        return render_template('index.html', first_name=first_name)
+        dynamic_button_id ="hello"
+        video2="https://www.edamam.com/"
+        title2=" am title 2"
+        print(video2)
+        print(dynamic_button_id)
+
+        return render_template('index.html', first_name=first_name,video2=video2, dynamic_button_id=dynamic_button_id,title2=title2)
         
     else:
         #unsigned user
@@ -66,7 +80,7 @@ def signup():
         newname = request.form['newname']
         newemail = request.form['newemail']
         newpassword = request.form['newpassword']
-
+        is_teacher = 'flag' in request.form
 
         try:
             
@@ -75,9 +89,11 @@ def signup():
             auth.update_profile(user["idToken"], display_name = newname)
 
             
-
-            return redirect('/personal_details')
-
+            if is_teacher==True:
+                return(render_template('teacher_login.html'))
+            else:
+                return(render_template('personal_details.html'))
+           
             
         except Exception as e:
             
@@ -285,6 +301,13 @@ def working():
     else:
 
         return redirect('working.html') 
+
+@app.route("/teaher_login", methods = ['GET'])
+def teacher_login():
+
+
+    print(request.get_data())
+    return render_template('teacher_login.html')
 
 
 

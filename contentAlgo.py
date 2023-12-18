@@ -46,4 +46,5 @@ for link in csv_datasheet():
     level.append(link[6])
     
 
-print(sub,channel_link,rec_link,expertise,lang)
+for i in link:
+    print(i, end  = " " )
