@@ -1,0 +1,155 @@
+/* Global styles for body and container */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@500&family=Raleway&family=Roboto:wght@300;500&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4B9A79;
+    color: white;
+    text-align: center;
+  }
+
+
+.logo img {
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+  }
+
+
+  .content p{
+    font-size: 1.5rem;
+    font-family: 'Poppins';
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 1918px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Styles for the form */
+  form {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.25);
+    margin: 193px auto 0;
+    max-width: 1860px;
+  }
+  
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(33, 33, 33, 0.64);
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 0.60px #4B9A79 solid;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  input[type="submit"] {
+    background-color: #E67B3B;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #D26224;
+  }
+  
+  /* Additional styles for other elements */
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.37px;
+    margin-top: 219px;
+  }
+  
+  h2 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 148px;
+  }
+  
+  /* Styles for the "Save and Continue Later" section */
+  .save-section {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #E67B3B;
+    margin-top: 684px;
+  }
+  
+
+  .form-row {
+    margin-bottom: 20px;
+  }
+  
+  .form-row input,
+  .form-row select {
+    width: 100%;
+    padding: 10px;
+    border: 0.60px #4B9A79 solid;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .form-row select {
+    background-color: white;
+  }
+  /* Styles for both the submit and "Save and Continue" buttons */
+/* Styles for both the submit and "Save and Continue" buttons */
+.submit-button {
+    width: 100px; /* Adjust the width as needed */
+    padding: 10px;
+    background-color: #E67B3B;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .save-button {
+    width: 10rem; /* Adjust the width to make it a bit longer */
+    padding: 10px;
+    background-color: #E67B3B;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover,
+  .save-button:hover {
+    background-color: #D26224;
+  }
+  .logo {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+  
+  form {
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+  
