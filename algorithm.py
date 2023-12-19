@@ -1,11 +1,11 @@
 class Algorithm:
-    def __init__(self, activity_score=60, daily_credits=20, likes=200, views_count=2000, comment_count=500,user_level='beginner',video_level='intermediate'):
+    def __init__(self, activity_score=60, daily_credits=20, likes=200, views_count=2000, comment_count=500,user_level='beginner',video_level='beginner'):
         self.activity_score = activity_score
         self.daily_credits = daily_credits
         self.likes = likes
         self.views_count = views_count
         self.comment_count = comment_count
-        self.user_level = user_level 
+        self.user_level = user_level
         self.video_level=video_level
 
     def calculate_progress_score(self):
@@ -30,7 +30,11 @@ class Algorithm:
         return level_mapping.get(user_level.lower())
 
     def stuma_algorithm(self):
-     w1, w2, w3, w4, w5, w6 = 0.2, 0.2, 0.2, 0.25, 0.05, 0.1
+     w1, w2, w3, w4, w5, w6 = 0.18, 0.15, 0.2, 0.18, 0.14, 0.15
+
+
+
+
      mapped_user_level = self.map_user_level(self.user_level)
 
      # STuMa Algorithm
@@ -50,7 +54,7 @@ class Algorithm:
 
 
 
-algorithm_instance = Algorithm(activity_score=60, daily_credits=20, likes=200, views_count=2000, comment_count=500, user_level='beginner',video_level='intermediate')
+algorithm_instance = Algorithm(activity_score=60, daily_credits=20, likes=200, views_count=2000, comment_count=500, user_level='beginner',video_level='beginner')
 progress_score = algorithm_instance.calculate_progress_score()
 user_level = algorithm_instance.determine_user_level()
 score = algorithm_instance.stuma_algorithm()
