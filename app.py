@@ -1,8 +1,14 @@
 from flask import *
 from pyrebase import *
 import requests
+import time 
 from datetime import timedelta
+from flask_socketio import SocketIO, emit
+from threading import Thread, Event
 
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'SECRET_KEY'
+socketio = SocketIO(app)
 #---------------initializeing application------------------------
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
@@ -31,10 +37,33 @@ auth = firebase.auth()
 app.secret_key = "SECRET_KEY"
 
 #-----------------------page routes-----------------------------------------
+#time calculation
+
+def calculate_total_time():
+    if 'user' in session and 'start_time' in session:
+        elapsed_time = time.time() - session['start_time']
+        total_time_spent = session.get('total_time_spent', 0) + elapsed_time
+        session['total_time_spent'] = total_time_spent
+      ##  print(f"Total Time Spent: {total_time_spent} seconds")
+        session.pop('start_time', None)
+        return total_time_spent
+        
+#time calculation
+@app.before_request
+def before_request():
+    if 'user' in session and 'start_time' not in session:
+        session['start_time'] = time.time()
+#time calculation
+@app.teardown_request
+def teardown_request(exception=None):
+    calculate_total_time()
+
+
+
 
 @app.route('/')
 def home():
-
+    
     if 'user' in session:
 
         #signed user
@@ -152,7 +181,7 @@ def login():
 def logout():
 
 
-
+    print(calculate_total_time())
     session.pop('user', None)
     session.clear() 
 
@@ -311,6 +340,14 @@ def teacher_login():
 
     print(request.get_data())
     return render_template('teacher_login.html')
+
+#time function
+@app.route('/update_total_time', methods=['POST'])
+def update_total_time():
+    print( calculate_total_time())
+    return jsonify(success=True)
+
+
 
 
 

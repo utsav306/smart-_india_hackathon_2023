@@ -14,7 +14,20 @@
    
 
 </head>
+<script src="/static/js/time.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- time calc-->
+<script>
+  $(window).on('beforeunload', function() {
+    $.ajax({
+      type: 'POST',
+      url: '/update_total_time',
+      async: false,
+    });
+  });
 
+  // Add similar logic for logout event if needed
+</script>
 
 
 
@@ -188,7 +201,7 @@
     
         <!-- "Go to" button -->
        
-          <a href="{video1}" class="btn btn-warning btn-bottom-center custom-btn" id="{{ button1id }}">Go to</a>
+          <a href="{{video1}}" class="btn btn-warning btn-bottom-center custom-btn" id="{{ button1id }}">Go to</a>
      
       </div>
     </div>
