@@ -160,14 +160,14 @@
           <div class="like">
             <button type="button" onclick="incrementLikes()" style="display: flex; align-items: center;">
               <i class="fa-solid fa-thumbs-up"></i>
-              <span id="likeCount" class="badge badge-dark" style="margin-left: 0.3rem;">1000</span>
+              <span id="likeCount" class="badge badge-dark" style="margin-left: 0.3rem;">{{likevid1}}</span>
           </button>
           
         </div>
         <div class="dislike">
             <button type="button"  style="display: flex; align-items: center;">
               <i class="fa-regular fa-eye fa-2xs"></i>
-                <span class="badge badge-dark" style="margin-left: 0.3rem;">50</span>
+                <span class="badge badge-dark" style="margin-left: 0.3rem;">{{viewsvid1}}</span>
             </button>
         </div>
         </div>
@@ -175,11 +175,11 @@
         <!-- Course Heading and Prof Details -->
         <div class="card-body">
           <h5 class="card-title">{{title1}}</h5>
-          <p class="card-text mb-1">Platform: YouTube</p>
+          <p class="card-text mb-1">{{thumbnail1}}</p>
           <!-- Additional content as needed -->
           <div class="d-flex align-items-center">
             <div class="rounded-circle profile-icon"></div>
-            <p class="mb-0 ml-2 mb-3">By Prof. John Doe</p>
+            <p class="mb-0 ml-2 mb-3">By {{chanel1}}</p>
           </div>
         </div>
     
@@ -207,29 +207,31 @@
               <div class="like">
                 <button type="button">
                     <i class="fa-solid fa-thumbs-up"></i>
-                    <span class="badge badge-dark">1000</span>
+                    <span class="badge badge-dark">{{likevid2}}</span>
                 </button>
             </div>
             <div class="dislike">
               <button type="button"  style="display: flex; align-items: center;">
                 <i class="fa-regular fa-eye fa-2xs"></i>
-                  <span class="badge badge-dark" style="margin-left: 0.3rem;">50</span>
+                  <span class="badge badge-dark" style="margin-left: 0.3rem;">{{viewsvid2}}</span>
               </button>
           </div>
             </div>
         
             <!-- Course Heading and Prof Details -->
+
             <div class="card-body">
               <h5 class="card-title">{{title2}}</h5>
-              <p class="card-text mb-1">Platform: YouTube</p>
+              <p class="card-text mb-1">{{thumbnail2}}</p>
               <!-- Additional content as needed -->
               <div class="d-flex align-items-center">
                 <div class="rounded-circle profile-icon"></div>
-                <p class="mb-0 ml-2 mb-3">By Prof. John Doe</p>
+                <p class="mb-0 ml-2 mb-3">By {{chanel2}}</p>
               </div>
             </div>
         
             <!-- "Go to" button -->
+            <!--comment-->
            
               <a href="{{video2}}" class="btn btn-warning btn-bottom-center custom-btn" id="{{ button2id }}">Go to</a>
          
