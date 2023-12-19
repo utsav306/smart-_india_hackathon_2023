@@ -6,7 +6,7 @@ import json
 
 API_KEY = 'AIzaSyAMtysCv1YSFqck6UOtdpZWYuZ1qzGGNWY'
 
-channel_id = 'UCbXgNpp0jedKWcQiULLbDTA'
+#channel_id = 'UCbXgNpp0jedKWcQiULLbDTA'
 
 
 def get_video_ids(URL_PLAYLIST):
@@ -43,7 +43,8 @@ def post_video_stats(playlist_url):
     
         #------------------------collecting all datas of youtube playlist videos------------------------
         
-        video_url =  get_video_ids("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g")[1][count]
+
+        video_url =  get_video_ids(playlist_url)[1][count]
 
         video_id = data["items"][0]["id"]  #id of the video
 
@@ -65,7 +66,7 @@ def post_video_stats(playlist_url):
 
         count+=1
 
-        print(count, video_thumbnail,duration_of_video)
+        return (playlist_url,video_url,video_id,title_of_video,tags_of_video,channel_title,video_thumbnail,duration_of_video,video_views,video_likes,video_comments_count,)
 
     
     

@@ -7,7 +7,7 @@ from pytube import *
 class YTStats():
 
     def __init__(self,api_key):
-        #self.channelId = channel_id
+        #eself.channelId = channel_id
         self.apiKey = api_key 
         self.channel_stats = None
     
