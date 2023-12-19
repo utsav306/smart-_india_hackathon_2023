@@ -9,7 +9,6 @@ from threading import Thread, Event
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 socketio = SocketIO(app)
-
 #---------------initializeing application------------------------
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
@@ -45,7 +44,7 @@ def calculate_total_time():
         elapsed_time = time.time() - session['start_time']
         total_time_spent = session.get('total_time_spent', 0) + elapsed_time
         session['total_time_spent'] = total_time_spent
-        print(f"Total Time Spent: {total_time_spent/60} minutes")
+      ##  print(f"Total Time Spent: {total_time_spent} seconds")
         session.pop('start_time', None)
         return total_time_spent
         
@@ -64,26 +63,47 @@ def teardown_request(exception=None):
 
 @app.route('/')
 def home():
+    
     if 'user' in session:
+
+        #signed user
+        
         user_id_token = session['user']["idToken"]
-        try:
-            auth.refresh(session['user']['refreshToken'])
-            user = auth.get_account_info(user_id_token)['users'][0]
-            first_name = user.get('displayName', '').split()[0] if 'displayName' in user else "!"
-            button1id = "hello"
-            video1 = "https://www.edamam.com/"
-            title1 = "I am title 1"
-            button2id = "hello"
-            video2 = "https://www.edamam.com/"
-            title2 = "I am title 2"
-            print(video2)
-            return render_template('index.html', first_name=first_name, video2=video2, button2id=button2id,
-                                   title2=title2, video1=video1, button1id=button1id, title1=title1)
-        except Exception as e:
-            print(f"Error getting account info: {e}")
-            # Handle the error, for now, redirect to the login page
-            return redirect('/login')
+        auth.refresh(session['user']['refreshToken'])
+
+
+        user = auth.get_account_info(user_id_token)['users'][0]
+        first_name = ""
+        if "displayName" not in user:
+            first_name = "!"
+        else:
+            first_name = user['displayName'].split()[0]
+
+        button1id ="hello"
+        video1="https://www.edamam.com/"
+        title1=" I am title 1"
+        thumbnail1="thumbnail1"
+        chanel1="physwalla"
+        likevid1="likevid1"
+        viewsvid1="viewsvid1"
+
+        button2id ="hello"
+        video2="https://www.edamam.com/"
+        title2=" I am title 2"
+        thumbnail2="thumbnail2"
+        chanel2="subhradeep"
+        likevid2="likevid2"
+        viewsvid2="viewsvid2"
+    ##comment
+
+
+        print(video2)
+
+
+        return render_template('index.html', first_name=first_name,video1=video1, button1id=button1id,title1=title1,thumbnail1=thumbnail1,chanel1=chanel1,likevid1=likevid1,viewsvid1=viewsvid1,video2=video2,button2id=button2id,title2=title2,thumbnail2=thumbnail2,chanel2=chanel2,likevid2=likevid2,viewsvid2=viewsvid2)
+        
     else:
+        #unsigned user
         return render_template('index2.html')
 
 
@@ -198,16 +218,15 @@ def dashboard():
         login_name="Utsav"
         login_email="kkk.@"
         login_phone="123456789"
-        login_course="Btech"
+        login_mobile="032145687"
         login_address="abcdefgh"
-        gyaan_point="100"
-        login_full_name="Utsav Tiwari"
+        
         if "displayName" not in user:
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
 
-        return render_template('dashboard.html', first=first_name,login=login_name,login_email=login_email,login_phone=login_phone, login_course=login_course,login_address=login_address,gyaan_point=gyaan_point,login_full_name=login_full_name)
+        return render_template('dashboard.html', first=first_name,login=login_name,login_email=login_email,login_phone=login_phone, login_mobile=login_mobile,login_address=login_address)
 
 
     else:
