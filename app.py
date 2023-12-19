@@ -72,13 +72,24 @@ def home():
             first_name = user.get('displayName', '').split()[0] if 'displayName' in user else "!"
             button1id = "hello"
             video1 = "https://www.edamam.com/"
+            like1="1000"
+            view1="1000"
+            thumbnail1="Thumbnail"
+            channel1="PW"
+            cardimage1=""
             title1 = "I am title 1"
+
             button2id = "hello"
             video2 = "https://www.edamam.com/"
             title2 = "I am title 2"
+            like2="1000"
+            view2="1000"
+            thumbnail2="Thumbnail"
+            channel2="Udemy"
+            cardimage2=""
             print(video2)
             return render_template('index.html', first_name=first_name, video2=video2, button2id=button2id,
-                                   title2=title2, video1=video1, button1id=button1id, title1=title1)
+                                   title2=title2, video1=video1, button1id=button1id, title1=title1,like1=like1,like2=like2,channel1=channel1,view1=view1,thumbnail1=thumbnail1,view2=view2,thumbnail2=thumbnail2,channel2=channel2,cardimage1=cardimage1,cardimage2=cardimage2)
         except Exception as e:
             print(f"Error getting account info: {e}")
             # Handle the error, for now, redirect to the login page
