@@ -160,7 +160,7 @@
           <div class="like">
             <button type="button" onclick="incrementLikes()" style="display: flex; align-items: center;">
               <i class="fa-solid fa-thumbs-up"></i>
-              <span id="likeCount" class="badge badge-dark" style="margin-left: 0.3rem;">1000</span>
+              <span id="likeCount" class="badge badge-dark" style="margin-left: 0.3rem;">{{like1}}</span>
           </button>
           
         </div>
@@ -204,12 +204,13 @@
         
             <!-- Like and Dislike buttons in the same line -->
             <div class="card-body d-flex justify-content-between align-items-center">
-              <div class="like">
-                <button type="button">
-                    <i class="fa-solid fa-thumbs-up"></i>
-                    <span class="badge badge-dark">{{like2}}</span>
-                </button>
-            </div>
+          <div class="like">
+            <button type="button" onclick="incrementLikes()" style="display: flex; align-items: center;">
+              <i class="fa-solid fa-thumbs-up"></i>
+              <span id="likeCount" class="badge badge-dark" style="margin-left: 0.3rem;">{{like2}}</span>
+            </button>
+          
+          </div>
             <div class="dislike">
               <button type="button"  style="display: flex; align-items: center;">
                 <i class="fa-regular fa-eye fa-2xs"></i>
