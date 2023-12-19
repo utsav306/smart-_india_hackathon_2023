@@ -15,7 +15,19 @@
 
 </head>
 <script src="/static/js/time.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- time calc-->
+<script>
+  $(window).on('beforeunload', function() {
+    $.ajax({
+      type: 'POST',
+      url: '/update_total_time',
+      async: false,
+    });
+  });
 
+  // Add similar logic for logout event if needed
+</script>
 
 
 
