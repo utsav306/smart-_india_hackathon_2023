@@ -25,7 +25,7 @@ def get_video_ids(URL_PLAYLIST):
     
     return (vid_ids,urls)
 
-yt = YTStats(API_KEY, channel_id)
+yt = YTStats(API_KEY)
 
 #print((get_video_ids("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g"))[1])
 
@@ -38,7 +38,7 @@ for x in (get_video_ids("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KF
  
     
     
-    #collecting all datas
+    #------------------------collecting all datas of youtube playlist videos------------------------
     
     video_url =  get_video_ids("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g")[1][count]
 
@@ -62,7 +62,7 @@ for x in (get_video_ids("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KF
 
     count+=1
 
-    print(video_thumbnail,duration_of_video)
+    print(count, video_thumbnail,duration_of_video)
 
     
     

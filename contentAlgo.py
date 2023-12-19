@@ -1,15 +1,14 @@
+#module importing
+
+
 #for csv files operation
 import csv
 from openpyxl import load_workbook
 
-#database handling
-from sqlite3 import *
-
-#for youtube data scraping
-
 
 
 #-----------extracting dataset------------------
+
 def csv_datasheet():
     wb = load_workbook(filename='CONTENT  SHEET__GYAAN CONNECT.xlsx')
 
@@ -26,25 +25,28 @@ def csv_datasheet():
             writer.writerow(line)
         csv_obj.close()
     return csv_data
-#-----------------dataset loaded for comparision----------------------
 
-sub = []
-channel_link = []
-rec_link = []
-expertise = []
-lang = []
-course = []
-level = []
 
-for link in csv_datasheet():
-    sub.append(link[0])
-    channel_link.append(link[1])
-    rec_link.append(link[2])
-    expertise.append(link[3])
-    lang.append(link[4])
-    course.append(link[5])
-    level.append(link[6])
+
+#-----------------function for dataset loaded for comparision----------------------
+
+
+
+def fetching_dataset(csv_file):
+    data_sheet = {"subject":[],"channel_link":[],"rec_link":[],"expertise":[],"lang":[],"course":[],"video_level":[]}
+
+    for link in csv_file():
+
+        data_sheet["subject"].append(link[0]) 
+        data_sheet["channel_link"].append(link[1]) 
+        data_sheet["rec_link"].append(link[2]) 
+        data_sheet["expertise"].append(link[3]) 
+        data_sheet["lang"].append(link[4]) 
+        data_sheet["course"].append(link[5]) 
+        data_sheet["video_level"].append(link[6]) 
+    
+    return data_sheet
+
+    
     
 
-for i in link:
-    print(i, end  = " " )
