@@ -1,3 +1,14 @@
+:root {
+  --line-border-fill: #ff9d00;
+  --line-border-empty: #ff9d00;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: inherit;
+}
 header{
     
     background: white;
@@ -238,4 +249,85 @@ body{
 .btn-custom {
   background-color: orange !important;
   /* You can add additional styles if needed */
+}
+
+
+
+
+
+
+:root {
+  --line-border-fill: #ff9d00;
+  --line-border-empty: #ff9d00;
+}
+
+.container1 {
+  margin-top: 15px;
+  text-align: center;
+  padding: 2rem;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center the circles vertically */
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 90%;
+  width: 350px;
+}
+
+.progress-container::before {
+  content: "";
+  background: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  background: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background: #fff;
+  color: #000000;
+  font-weight: bold;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
 }

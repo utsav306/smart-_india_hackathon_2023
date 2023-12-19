@@ -141,30 +141,14 @@
       <div class="section_subtitle pl-7 pt-2">Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut</div>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <div class="course_search mb-5">
-        <form action="#" class="course_search_form d-flex flex-md-row flex-column align-items-start justify-content-center">
-          <div class="input d-flex justify-content-between">
-            <div><input type="text" class="course_input" placeholder="Course" required="required"></div>
-            <div class="space" style="width: 7rem;"></div>
-            <div><input type="text" class="course_input" placeholder="Level" required="required"></div>
-          </div>
-          <div class="space" style="width: 5rem;"></div>
-          <button class="course_button"><span>search course</span><span class="button_arrow"></i></span></button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-
+  
 
   <div class="container card-container mt-3">
-    <div class="container">
-      <div class="row g-4 justify-content-center">
+    <div class="container" style="margin-top: 2rem;">
+      <div class="row g-2 justify-content-center">
         <!-- First Card -->
     <!-- First Card -->
-    <div class="col-md-3 mb-3">
+    <div class="col-md-4 mb-2">
       <div class="card">
         <!-- Embed a YouTube video using the YouTube Embedded Player with curved borders -->
         <div class="youtube-video">
@@ -174,16 +158,16 @@
         <!-- Like and Dislike buttons in the same line -->
         <div class="card-body d-flex justify-content-between align-items-center">
           <div class="like">
-            <button type="button" onclick="incrementLikes()">
+            <button type="button" onclick="incrementLikes()" style="display: flex; align-items: center;">
               <i class="fa-solid fa-thumbs-up"></i>
-              <span id="likeCount" class="badge badge-dark">1000</span>
+              <span id="likeCount" class="badge badge-dark" style="margin-left: 0.3rem;">1000</span>
           </button>
           
         </div>
         <div class="dislike">
-            <button type="button">
-                <i class="fas fa-thumbs-down"></i>
-                <span class="badge badge-dark">50</span>
+            <button type="button"  style="display: flex; align-items: center;">
+              <i class="fa-regular fa-eye fa-2xs"></i>
+                <span class="badge badge-dark" style="margin-left: 0.3rem;">50</span>
             </button>
         </div>
         </div>
@@ -211,7 +195,7 @@
 
 
         <!-- Second Card -->
-        <div class="col-md-3 mb-3">
+        <div class="col-md-4 mb-2">
           <div class="card">
             <!-- Embed a YouTube video using the YouTube Embedded Player with curved borders -->
             <div class="youtube-video">
@@ -227,11 +211,11 @@
                 </button>
             </div>
             <div class="dislike">
-                <button type="button">
-                    <i class="fas fa-thumbs-down"></i>
-                    <span class="badge badge-dark">50</span>
-                </button>
-            </div>
+              <button type="button"  style="display: flex; align-items: center;">
+                <i class="fa-regular fa-eye fa-2xs"></i>
+                  <span class="badge badge-dark" style="margin-left: 0.3rem;">50</span>
+              </button>
+          </div>
             </div>
         
             <!-- Course Heading and Prof Details -->

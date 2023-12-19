@@ -521,20 +521,33 @@ html{
     margin-top: 2px;
     margin-left: 3rem; /* Adjust the margin between input and button as needed */
   }
-  .like button,
+  .like button{
+    border: none;
+      background: none;
+      cursor: pointer;
+  }
   .dislike button {
       border: none;
       background: none;
       cursor: pointer;
   }
 
-  .like i,
-  .dislike i {
-      font-size: 24px; /* Adjust the size as needed */
+  .like i
+  {
+    font-size: 24px; /* Adjust the size as needed */
       color: orange; /* Set the color of the icons */
   }
+  
+  .dislike i {
+   
+      font-size: 20px; /* Adjust the size as needed */
+     
+  }
 
-  .like .badge,
+  .like .badge{
+    background-color: orange; /* Set the background color of the badge */
+    color: white;
+  }
   .dislike .badge {
       background-color: orange; /* Set the background color of the badge */
       color: white; /* Set the text color of the badge */
