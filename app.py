@@ -208,13 +208,16 @@ def dashboard():
         first_name = ""
         login_name="Utsav"
         login_email="kkk.@"
+        login_phone="123456789"
+        login_mobile="032145687"
+        login_address="abcdefgh"
         
         if "displayName" not in user:
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
 
-        return render_template('dashboard.html', first=first_name,login=login_name,login_email=login_email)
+        return render_template('dashboard.html', first=first_name,login=login_name,login_email=login_email,login_phone=login_phone, login_mobile=login_mobile,login_address=login_address)
 
 
     else:
