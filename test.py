@@ -6,17 +6,17 @@ from pytube import *
 
 class YTStats():
 
-    def __init__(self,api_key,channel_id):
-        self.channelId = channel_id
+    def __init__(self,api_key):
+        #self.channelId = channel_id
         self.apiKey = api_key 
         self.channel_stats = None
     
     
-    def get_channel_stats(self):
+    # def get_channel_stats(self):
         
-        url = f'https://www.googleapis.com/youtube/v3/channels?part=statistics&id={self.channelId}&key={self.apiKey}'
+    #     url = f'https://www.googleapis.com/youtube/v3/channels?part=statistics&id={self.channelId}&key={self.apiKey}'
 
-        return url    
+    #     return url    
 
 
     def get_video_stats(self,video_ids):
