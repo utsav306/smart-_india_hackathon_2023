@@ -34,39 +34,79 @@
                         <form>
                             <!-- Form Group (username)-->
                             <div class="mb-3">
-                                <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="">
+                                <label class="small mb-1" for="inputUsername" >Username (how your name will appear to other users on the site)</label>
+                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="" required>
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (first name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">First name</label>
-                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie">
+                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="" required>
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputLastName">Last name</label>
+                                    <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputexpertise">Expert in</label>
+                                    <input class="form-control" id="inputexpertise" type="text" placeholder="Enter your expertise" value="" required>
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputwebsite">Enter your Website(if any)</label>
+                                    <input class="form-control" id="inputwebsite" type="text" placeholder="Enter your wesbite" value="">
+                                </div>
+                            </div>
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputgithub">Enter github account(if any)</label>
+                                    <input class="form-control" id="inputgithub" type="text" placeholder="Enter github id " value="">
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputtwitter">Enter twitter account(if any)</label>
+                                    <input class="form-control" id="inputtwitter" type="text" placeholder="Enter twitter account" value="">
+                                </div>
+                            </div>
+
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputfacebook">Enter facebook account(if any)</label>
+                                    <input class="form-control" id="inputfacebook" type="text" placeholder="Enter your first name" value="">
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName">Last Instagram account</label>
                                     <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="">
                                 </div>
                             </div>
+
+                           
                             <!-- Form Row        -->
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (organization name)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputOrgName">University name</label>
+                                    <label class="small mb-1" for="inputOrgName">University name(if any)</label>
                                     <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your University name" value="">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputExperience">How much experience do you have?</label>
-                                    <input class="form-control" id="inputExperience" type="text" placeholder="15" value="">
+                                    <input class="form-control" id="inputExperience" type="text" placeholder="15" value="" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="small mb-1" for="selectGender">Select your Gender</label>
-                                    <select class="form-control" id="selectGender" name="selectedGender">
+                                    <select class="form-control" id="selectGender" name="selectedGender" required>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
-                                        <option value="non-binary">Non-Binary</option>
+                                        
                                         <option value="prefer-not-to-say">Prefer Not to Say</option>
                                         <!-- Add more options as needed -->
                                     </select>
@@ -80,30 +120,27 @@
                             <!-- Form Group (email address)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com" required>
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (phone number)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputPhone">Phone number</label>
-                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="">
+                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="" required>
                                 </div>
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="">
+                                    <label class="small mb-1" for="inputBirthday">Date of Birth</label>
+                                    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="" required>
                                 </div>
                             </div>
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (current course)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputExpertise">Expertise in </label>
-                                    <input class="form-control" id="inputExpertise" type="text" placeholder="Enter your Expertise " value="">
-                                </div>
+                               
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="selectLang">Choose the language in which you want to teach</label>
+                                    <label class="small mb-1" for="selectLang">Choose the language in which you want to teach</label required>
                                     <select class="form-control" id="selectLang" name="selectedLanguage">
                                         <!-- Add options for different languages -->
                                         <option value="english">English</option>
