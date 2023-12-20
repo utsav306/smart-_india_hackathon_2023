@@ -11,20 +11,24 @@ The Online Personalized Education Platform is a revolutionary solution developed
    - Email verification and password reset functionalities for enhanced security.
 
 2. **Personalized Learning Paths:**
-   - Customized learning paths based on user preferences and performance.
-   - Machine learning algorithms to recommend relevant courses and materials.
+   - Enhancing Personalized Education through incorporation of advanced algorithms(STuMa, CPA ,Vidrec,etc)
+   - Providing Consistency Credit System(gyx credit).
+   - Tracking the Daily Activity of the user to give them some Activity score.
+   - AI-Powered Chat-Bot for instant problem-solving/Doubts.
+   - Dashboard for Profiling.
+   - Collaborating with teacher,to use our Platform.
 
 3. **Interactive User Interface:**
    - Intuitive and user-friendly interface designed with HTML and CSS.
    - Responsive design for optimal viewing on various devices.
+   - Profile synthesis
 
 4. **Real-time Updates:**
+   - Live Chat Server for Student-Student/teacher Interaction.
    - Firebase Realtime Database integration for instant updates.
    - Live progress tracking and notifications for users and instructors.
 
-5. **Assessment and Feedback:**
-   - Dynamic quizzes and assessments using Python.
-   - Detailed feedback and performance analytics for continuous improvement.
+
 
 ## Dependencies
 
@@ -38,6 +42,7 @@ The Online Personalized Education Platform is a revolutionary solution developed
 
 - **Database:**
   - Firebase Realtime Database
+  - MySQL (cipher) : Encrypted Database and cloud services
 
 ## Getting Started
 
@@ -56,15 +61,13 @@ Before getting started, ensure you have the following installed on your machine:
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/online-education-platform.git
-    cd online-education-platform
+    git clone https://github.com/rudeCoder001/TMSL-SIH-2023.git
+    
     ```
 
 2. **Install Dependencies:**
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+    Install all the dependencies needed to run.
 
 3. **Set up Firebase:**
 
@@ -78,11 +81,11 @@ Before getting started, ensure you have the following installed on your machine:
     python app.py
     ```
 
-    Your application will be running at `http://localhost:5000`.
+    our application will be running at `http://localhost:5000`.
 
 5. **Access the Platform:**
 
-    Open your web browser and navigate to `http://localhost:5000` to access the Online Personalized Education Platform.
+    Open  web browser and navigate to `http://localhost:5000` to access the Online Personalized Education Platform.
 
 ## Notes
 
