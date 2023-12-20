@@ -110,29 +110,9 @@
 
 
 
-<id="body-content">
 
-<div class="land">
-<div class="hero">
-  <div class="side-hero">
-    <h1>GYAAN <span id="smart">CONNECT</span></h1>
-    <h1>______<span id="future">_______</span></h1>
-    <form method="POST" action = "{{ url_for('searchQuery') }}">
-      <div class="search__container">
-        <input class="search__input" type="text" placeholder="Search" name = "query" id = "query">
-    </div>
- 
-      <!-- Your form fields go here -->
-      <button type="submit">Search</button>
-  
-    </form>
 
-  </div>
-  <div class="first-hero">
-    <img src="/static/images/first.png" alt="">
-  </div>
-</div>
-</div>
+
 
 
 
@@ -141,7 +121,7 @@
 <div class="courses" id="courses">
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
-      <div class="section_title text-center pt-3"><h1>Recommended courses are </h1></div>
+      <div class="section_title text-center pt-3"><h1>Suggestions are</h1></div>
       <div class="section_subtitle pl-7 pt-2" style="font-size: 1.5rem; text-align: center;">Some of Recommended course according to your level are :</div>
     </div>
   </div>
@@ -242,97 +222,97 @@
          
           </div>
         </div>
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
+        <!-- Fourth Card -->
+<div class="col-md-4 mb-2">
+    <div class="card">
+      <!-- Embed a YouTube video using the YouTube Embedded Player with curved borders -->
+      <div class="youtube-video">
+        <img src="{{cardimage4}}" alt="hii">
       </div>
+  
+      <!-- Like and Dislike buttons in the same line -->
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="like">
+          <button type="button" onclick="incrementLikes()" style="display: flex; align-items: center;">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <span id="likeCount" class="badge badge-dark" style="margin-left: 0.3rem;">{{like4}}</span>
+          </button>
+        </div>
+        <div class="dislike">
+          <button type="button"  style="display: flex; align-items: center;">
+            <i class="fa-regular fa-eye fa-2xs"></i>
+            <span class="badge badge-dark" style="margin-left: 0.3rem;">{{view4}}</span>
+          </button>
+        </div>
+      </div>
+  
+      <!-- Course Heading and Prof Details -->
+      <div class="card-body">
+        <h5 class="card-title">{{title4}}</h5>
+        <p class="card-text mb-1">{{thumbnail4}}</p>
+        <!-- Additional content as needed -->
+        <div class="d-flex align-items-center">
+          <div class="rounded-circle profile-icon"></div>
+          <p class="mb-0 ml-2 mb-3">By {{channel4}}</p>
+        </div>
+      </div>
+  
+      <!-- "Go to" button -->
+      <a href="{{video4}}" class="btn btn-warning btn-bottom-center custom-btn" id="{{ button4id }}">Go to</a>
     </div>
   </div>
-</div>
-
-
-
   
-
-
-
-
-<div class="premium">
-  <div class="left-hero">
-    <img src="/static/images/OBJECTS.png">
-  </div>
-  <div class="right-hero">
-    <h1>Personalised <span>Learning</span></h1>
-    <h1>Experience</h1>
-    <img src="/static/images/premium.png">
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="students">
-  <h1>What Our Users Say ?</h1>
-  <p>Here are some reviews by our users</p>
- 
-  <div class="container">
-    <div class="row g-4 justify-content-center" style="margin-left: auto; margin-right: auto; margin-top: auto;margin-bottom: auto;">
-      <div class="col-md-3 mx-3 ">
-        <div class="card ">
-          
-          <div class="card-body ">
-            <h5 class="card-title">"Helpfull"</h5>
-            <p class="card-text">I Found The website extremely usefull and easy to use..</p>
-        
-          </div>
+  <!-- Fifth Card -->
+  <div class="col-md-4 mb-2">
+    <div class="card">
+      <!-- Embed a YouTube video using the YouTube Embedded Player with curved borders -->
+      <div class="youtube-video">
+        <img src="{{cardimage5}}" alt="hii">
+      </div>
+  
+      <!-- Like and Dislike buttons in the same line -->
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="like">
+          <button type="button" onclick="incrementLikes()" style="display: flex; align-items: center;">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <span id="likeCount" class="badge badge-dark" style="margin-left: 0.3rem;">{{like5}}</span>
+          </button>
+        </div>
+        <div class="dislike">
+          <button type="button"  style="display: flex; align-items: center;">
+            <i class="fa-regular fa-eye fa-2xs"></i>
+            <span class="badge badge-dark" style="margin-left: 0.3rem;">{{view5}}</span>
+          </button>
         </div>
       </div>
   
-      <div class="col-md-3 mx-2 ">
-        <div class="card">
-         
-          <div class="card-body">
-            <h5 class="card-title">"Good UI"</h5>
-            <p class="card-text">The website has really great UI and easy to use interface.</p>
-           
-          </div>
+      <!-- Course Heading and Prof Details -->
+      <div class="card-body">
+        <h5 class="card-title">{{title5}}</h5>
+        <p class="card-text mb-1">{{thumbnail5}}</p>
+        <!-- Additional content as needed -->
+        <div class="d-flex align-items-center">
+          <div class="rounded-circle profile-icon"></div>
+          <p class="mb-0 ml-2 mb-3">By {{channel5}}</p>
         </div>
       </div>
   
-      <div class="col-md-3 mx-2" >
-        <div class="card">
-         
-          <div class="card-body">
-            <h5 class="card-title">"Good Content"</h5>
-            <p class="card-text">The content provided by Gyaan Connect is extremely usefull and is of high quality..</p>
-          
-          </div>
-        </div>
-      </div>
-  
-      </div>
+      <!-- "Go to" button -->
+      <a href="{{video5}}" class="btn btn-warning btn-bottom-center custom-btn" id="{{ button5id }}">Go to</a>
     </div>
   </div>
+  
+        
+        
+        
+        
+
+
+
+
+
+
+
   
 
 

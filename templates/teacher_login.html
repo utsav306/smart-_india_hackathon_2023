@@ -31,23 +31,23 @@
                 <div class="card mb-4">
                     <div class="card-header">Account Details</div>
                     <div class="card-body">
-                        <form>
+                        <form method="post" action="{{ url_for('submit_teacher_form') }}">
                             <!-- Form Group (username)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputUsername" >Username (how your name will appear to other users on the site)</label>
-                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="" required>
+                                <input class="form-control" id="inputUsername" name="inputUsername" type="text" placeholder="Enter your username" value="" required>
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (first name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">First name</label>
-                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="" required>
+                                    <input class="form-control" id="inputFirstName" name="inputFirstName" type="text" placeholder="Enter your first name" value="" required>
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputLastName">Last name</label>
-                                    <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="" required>
+                                    <input class="form-control" id="inputLastName" name="inputLastName" type="text" placeholder="Enter your last name" value="" required>
                                 </div>
                             </div>
 
@@ -55,24 +55,24 @@
                                 <!-- Form Group (first name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputexpertise">Expert in</label>
-                                    <input class="form-control" id="inputexpertise" type="text" placeholder="Enter your expertise" value="" required>
+                                    <input class="form-control" id="inputexpertise" name="inputexpertise" type="text" placeholder="Enter your expertise" value="" required>
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputwebsite">Enter your Website(if any)</label>
-                                    <input class="form-control" id="inputwebsite" type="text" placeholder="Enter your wesbite" value="">
+                                    <input class="form-control" id="inputwebsite" name="inputwebsite" type="text" placeholder="Enter your wesbite" value="">
                                 </div>
                             </div>
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (first name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputgithub">Enter github account(if any)</label>
-                                    <input class="form-control" id="inputgithub" type="text" placeholder="Enter github id " value="">
+                                    <input class="form-control" id="inputgithub"  name="inputgithub" type="text" placeholder="Enter github id " value="">
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputtwitter">Enter twitter account(if any)</label>
-                                    <input class="form-control" id="inputtwitter" type="text" placeholder="Enter twitter account" value="">
+                                    <input class="form-control" id="inputtwitter" name="inputtwitter" type="text" placeholder="Enter twitter account" value="">
                                 </div>
                             </div>
 
@@ -80,12 +80,12 @@
                                 <!-- Form Group (first name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputfacebook">Enter facebook account(if any)</label>
-                                    <input class="form-control" id="inputfacebook" type="text" placeholder="Enter your first name" value="">
+                                    <input class="form-control" id="inputfacebook" name="inputfacebook" type="text" placeholder="Enter your first name" value="">
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputinstagram"> Instagram account(if any)</label>
-                                    <input class="form-control" id="inputinstagram" type="text" placeholder="Enter your last name" value="">
+                                    <input class="form-control" id="inputinstagram" name="inputinstagram" type="text" placeholder="Enter your last name" value="">
                                 </div>
                             </div>
 
@@ -95,15 +95,15 @@
                                 <!-- Form Group (organization name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputOrgName">University name(if any)</label>
-                                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your University name" value="">
+                                    <input class="form-control" id="inputOrgName"  name="inputOrgName" type="text" placeholder="Enter your University name" value="">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputExperience">How much experience do you have?</label>
-                                    <input class="form-control" id="inputExperience" type="text" placeholder="15" value="" required>
+                                    <input class="form-control" id="inputExperience" name="inputExperience" type="text" placeholder="15" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="small mb-1" for="selectGender">Select your Gender</label>
-                                    <select class="form-control" id="selectGender" name="selectedGender" required>
+                                    <select class="form-control" id="selectGender" name="selectGender" required>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                         
@@ -111,7 +111,7 @@
                                         <!-- Add more options as needed -->
                                     </select>
                                     <label class="small mb-1" for="inputLocation">Location</label>
-                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="">
+                                    <input class="form-control" id="inputLocation" name="inputLocation" type="text" placeholder="Enter your location" value="">
                                 </div>
                                 
                               
@@ -120,19 +120,19 @@
                             <!-- Form Group (email address)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com" required>
+                                <input class="form-control" id="inputEmailAddress"  name="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com" required>
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (phone number)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputPhone">Phone number</label>
-                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="" required>
+                                    <input class="form-control" id="inputPhone" name="inputPhone" type="tel" placeholder="Enter your phone number" value="" required>
                                 </div>
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputBirthday">Date of Birth</label>
-                                    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="" required>
+                                    <input class="form-control" id="inputBirthday" type="text" name="inputBirthday" placeholder="Enter your birthday" value="" required>
                                 </div>
                             </div>
                             <div class="row gx-3 mb-3">
@@ -141,7 +141,7 @@
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="selectLang">Choose the language in which you want to teach</label required>
-                                    <select class="form-control" id="selectLang" name="selectedLanguage">
+                                    <select class="form-control" id="selectLang" name="selectLang">
                                         <!-- Add options for different languages -->
                                         <option value="english">English</option>
                                         <option value="spanish">Spanish</option>
@@ -165,7 +165,7 @@
                             </div> -->
                             
                             <!-- Save changes button-->
-                            <a href="{{ url_for('login') }}"><button type="button"  onclick="{alert('Registered Successfully! Please login to Continue!')}" class="btn btn-primary" type="button" style="color: white;">Save changes</button></a>
+                            <button type="submit" class="btn btn-primary" style="color: white;">Save changes</button>
                         </form>
                     </div>
                 </div>
