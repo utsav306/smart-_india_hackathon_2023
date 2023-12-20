@@ -20,3 +20,7 @@ def sqlAccess(cursor_command):
 
 if __name__ == '__main__':
     pass
+
+global cur,db
+db = sql.connect("gyaanConnect.db")
+cur = db.cursor() 
