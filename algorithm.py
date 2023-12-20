@@ -1,5 +1,5 @@
 class Algorithm:
-    def __init__(self, session_time,daily_credits=5, likes=200, views_count=1000, comment_count=50, user_level='beginner', video_level='beginner'):
+    def __init__(self, session_time = 120,daily_credits=5, likes=200, views_count=1000, comment_count=50, user_level='beginner', video_level='beginner'):
         self.daily_credits = daily_credits
         self.likes = likes
         self.views_count = views_count
@@ -53,11 +53,11 @@ class Algorithm:
             return None
 
 # Example usage
-algorithm_instance = Algorithm(session_time=120,daily_credits=20, likes=200, views_count=1000, comment_count=50, user_level='beginner', video_level='beginner')
-progress_score = algorithm_instance.calculate_progress_score()
-user_level = algorithm_instance.determine_user_level()
-score = algorithm_instance.stuma_algorithm()
+# algorithm_instance = Algorithm(session_time=120,daily_credits=20, likes=200, views_count=1000, comment_count=50, user_level='beginner', video_level='beginner')
+# progress_score = algorithm_instance.calculate_progress_score()
+# user_level = algorithm_instance.determine_user_level()
+# score = algorithm_instance.stuma_algorithm()
 
-print(f"User's Progress Score: {progress_score}")
-print(f"User's Level: {user_level}")
-print("Mapping Score:", score)
+# print(f"User's Progress Score: {progress_score}")
+# print(f"User's Level: {user_level}")
+# print("Mapping Score:", score)

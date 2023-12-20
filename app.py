@@ -151,8 +151,32 @@ def signup():
             auth.update_profile(user["idToken"], display_name = newname)
 
             
-            if is_teacher==True:
-                return(render_template('teacher_login.html'))
+            if is_teacher==True :
+
+                if request.method == 'POST':
+
+                
+                    inputUsername = request.form.get('inputUsername') 
+                    inputFirstname =  request.form.get('inputFirstname')
+                    inputLastname = request.form.get('inputLastname')
+                    inputexpertise =request.form.get('inputexpertise')
+                    inputwebsite = request.form.get('inputwebsite')
+                    inputgithub = request.form.get('inputgithub')
+                    inputtwitter = request.form.get('inputtwitter')
+                    inputfacebook = request.form.get('inputfacebook')
+                    inputinstagram = request.form.get('inputinstagram')
+                    inputOrgName = request.form.get('inputOrgName')
+                    inputExperience = request.form.get('inputExperience')
+                    selectGender = request.form.get('selectGender')
+                    inputLocation = request.form.get('inputLocation')
+                    inputEmailAddress = request.form.get('inputEmailAddress')
+                    inputPhone = request.form.get('inputPhone')
+                    inputBirthday = request.form.get('inputBirthday')
+                    selectLang = request.form.get('selectLang')
+
+                    
+
+                return(render_template('teacher_login.html',inputUsername = inputUsername , inputFirstname =  inputFirstname,inputLastname = inputLastname,inputexpertise =inputexpertise,inputwebsite = inputwebsite,inputgithub = inputgithub,inputtwitter = inputtwitter,inputfacebook = inputfacebook,inputinstagram = inputinstagram,inputOrgName = inputOrgName,inputExperience = inputExperience,selectGender = selectGender,inputLocation = inputLocation,inputEmailAddress = inputEmailAddress,inputPhone = inputPhone,inputBirthday = inputBirthday,selectLang = selectLang ))
             else:
                 return(render_template('personal_details.html'))
            

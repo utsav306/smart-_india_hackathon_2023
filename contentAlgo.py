@@ -27,9 +27,9 @@ def csv_datasheet():
     return csv_data
 
 
-def create_csv(filename,userid):
+def create_csv(filename,email_id):
     
-    with open(f"user{id}.csv",'w') as user_preference_file:
+    with open(f"user{email_id}.csv",'w') as user_preference_file:
         writer = csv.writer(user_preference_file,delimiter=',')
 
 
