@@ -83,4 +83,8 @@ def post_video_stats(playlist_url):
 # print(video_views,video_likes,video_comments_count)
         
 # url = get_video_ids("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g")[0]
-post_video_stats("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g")
+# post_video_stats("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g")
+
+json_url = requests.get(yt.get_video_stats('fr1f84rg4Nw'))
+data = json.loads(json_url.text)
+print(data["items"][0]["snippet"]["thumbnails"]["standard"]["url"])

@@ -117,11 +117,12 @@
   <div class="side-hero">
     <h1>GYAAN <span id="smart">CONNECT</span></h1>
     <h1>______<span id="future">_______</span></h1>
-    
+    <form method="POST" action = "{{ url_for('searchQuery') }}">
       <div class="search__container">
-        <input class="search__input" type="text" placeholder="Search">
+        <input class="search__input" type="text" placeholder="Search" name = "query" id = "query">
     </div>
-    
+    <button type="submit">Search</button>
+    </form>
 
   </div>
   <div class="first-hero">
