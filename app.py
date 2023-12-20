@@ -1,6 +1,6 @@
 from flask import *
 from pyrebase import *
-from algorithm import Algorithm
+#from algorithm import Algorithm
 import requests
 import time 
 from datetime import timedelta
@@ -583,6 +583,16 @@ def submit_teacher_form():
 
 
 
+@app.route('/search', methods=['POST'])
+def search_route():
+    # Handle the form submission here
+    # You can access form data using request.form
+   
+
+    # Perform any necessary actions with the form data
+
+    # For example, you can render a template with the search results
+    return render_template('suggestions.html')
 
 
 
