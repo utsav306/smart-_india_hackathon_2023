@@ -11,7 +11,6 @@ API_KEY = 'AIzaSyAMtysCv1YSFqck6UOtdpZWYuZ1qzGGNWY'
 
 def get_video_ids(URL_PLAYLIST):
 
-    # Retrieve URLs of videos from playlist
     playlist = Playlist(URL_PLAYLIST) 
 
     urls = []
