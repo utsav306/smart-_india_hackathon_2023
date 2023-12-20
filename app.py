@@ -218,18 +218,72 @@ def dashboard():
         gyx_credits=10
         login_full_name="Utsav Tiwari"
         login_address="Student"
+        login_course="Btech"
+
+
+        
+
+
+
         
         if "displayName" not in user:
             first_name = "!"
         else:
             first_name = user['displayName'].split()[0]
 
-        return render_template('dashboard.html', first=first_name,login=login_name,login_email=login_email,login_phone=login_phone, login_mobile=login_mobile,login_address=login_address,gyx_credit=gyx_credits,login_full_name=login_full_name)
+        return render_template('dashboard.html', first=first_name,login=login_name,login_email=login_email,login_phone=login_phone, login_mobile=login_mobile,login_address=login_address,gyx_credit=gyx_credits,login_full_name=login_full_name,login_course=login_course)
 
 
     else:
 
         return redirect('/login')
+
+
+@app.route('/teachers_dashboard')
+
+def teachers_dashboard():
+    
+    if 'user' in session:
+
+        #signed user    
+        
+        user_id_token = session['user']["idToken"]
+        
+        auth.refresh(session['user']['refreshToken'])
+
+        user = auth.get_account_info(user_id_token)['users'][0]
+        
+        teachers_name="Prof HC verma"
+        teachers_website="aboututsav.netlify.app"
+        teachers_github="github.com"
+        teachers_twitter="twitter.com"
+        teachers_instagram="instagram.com"
+        teachers_facebook="facebook.com"
+
+
+        teachers_login_name="Prof HC verma"
+        teachers_login_phone="123456789"
+        teachers_login_expertise="Physics "
+        teachers_login_address="Kolkata"
+        teachers_login_email="profverma@gmail.com"
+        
+        if "displayName" not in user:
+            first_name = "!"
+        else:
+            first_name = user['displayName'].split()[0]
+
+        return render_template('teachers_dashboard.html', first=first_name, teachers_github=teachers_github,teachers_facebook=teachers_facebook,teachers_instagram=teachers_instagram,teachers_twitter=teachers_twitter,teachers_website=teachers_website,teachers_name=teachers_name, teachers_login_name=teachers_login_name,teachers_login_phone=teachers_login_phone,teachers_login_expertise=teachers_login_expertise,teachers_login_address=teachers_login_address,teachers_login_email=teachers_login_email)
+
+
+    else:
+
+        return redirect('/login')
+    
+
+    
+
+
+
 
 
 @app.route('/forgot_password', methods=['GET', 'POST'])
