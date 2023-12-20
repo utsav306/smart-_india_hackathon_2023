@@ -110,6 +110,10 @@
                                     <option value="advanced">Advanced</option>
                                      
                                 </select>
+                                <label class="form-check-label" for="agreeTerms">
+                                    <input type="checkbox" id="flag" name="flag" required>
+                                    I agree to the <a href="/templates/cond.html" target="_blank">Terms and Conditions</a>
+                                </label>
                             </div>
                             <!-- Save changes button-->
                             <a href="{{ url_for('login') }}"><button type="button"  onclick="{alert('Registered Successfully! Please login to Continue!')}" class="btn btn-primary" type="button" style="color: white;">Save changes</button></a>
