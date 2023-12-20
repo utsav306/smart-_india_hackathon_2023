@@ -1,5 +1,6 @@
 from flask import *
 from pyrebase import *
+from algorithm import Algorithm
 import requests
 import time 
 from datetime import timedelta

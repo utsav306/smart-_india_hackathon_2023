@@ -1,5 +1,5 @@
 class Algorithm:
-    def __init__(self, session_time = 120,daily_credits=5, likes=200, views_count=1000, comment_count=50, user_level='beginner', video_level='beginner'):
+    def __init__(self, session_time,daily_credits=5, likes, views_count, comment_count, user_level='beginner', video_level='beginner'):
         self.daily_credits = daily_credits
         self.likes = likes
         self.views_count = views_count
