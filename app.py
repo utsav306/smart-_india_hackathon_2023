@@ -454,6 +454,46 @@ def update_total_time():
 
 
 
+
+
+
+@app.route('/submit_form', methods=['POST'])
+def submit_form():
+    if request.method == 'POST':
+        # Retrieve form data
+        username = request.form['inputUsername']
+        first_name = request.form['inputFirstName']
+        last_name = request.form['inputLastName']
+        university_name = request.form['inputOrgName']
+        gender = request.form['selectedGender']
+        location = request.form['inputLocation']
+        email = request.form['inputEmailAddress']
+        phone_number = request.form['inputPhone']
+        birthday = request.form['inputBirthday']
+        course_enrolled = request.form['inputenrolled']
+        topics_interested = request.form['inputBirthday']
+        level = request.form['selectedLevel']
+
+        # Do something with the data (e.g., save to a database)
+        # For now, just print the data
+        print(f"Username: {username}")
+        print(f"First Name: {first_name}")
+        print(f"Last Name: {last_name}")
+        print(f"University Name: {university_name}")
+        print(f"Gender: {gender}")
+        print(f"Location: {location}")
+        print(f"Email: {email}")
+        print(f"Phone Number: {phone_number}")
+        print(f"Birthday: {birthday}")
+        print(f"Course Enrolled: {course_enrolled}")
+        print(f"Topics Interested: {topics_interested}")
+        print(f"Level: {level}")
+
+        # Return a response (you can customize this based on your needs)
+        return render_template('login.html')
+
+
+
 '''@app.route('/livechat')
 def livechat():
     if 'user' in session:
@@ -465,6 +505,61 @@ def livechat():
         return render_template('live_server.html', first_name=first_name)
     else:
         return redirect('/login')'''
+
+
+def submit_teacher_form():
+    if request.method == 'POST':
+        # Print the entire form data
+        print("Teacher Form Data:", request.form)
+
+        # Retrieve form data
+        username = request.form.get('inputUsername', '')
+        first_name = request.form.get('inputFirstName', '')
+        last_name = request.form.get('inputLastName', '')
+        expertise = request.form.get('inputexpertise', '')
+        website = request.form.get('inputwebsite', '')
+        github = request.form.get('inputgithub', '')
+        twitter = request.form.get('inputtwitter', '')
+        facebook = request.form.get('inputfacebook', '')
+        instagram = request.form.get('inputinstagram', '')
+        university_name = request.form.get('inputOrgName', '')
+        experience = request.form.get('inputExperience', '')
+        gender = request.form.get('selectGender', '')
+        location = request.form.get('inputLocation', '')
+        email = request.form.get('inputEmailAddress', '')
+        phone = request.form.get('inputPhone', '')
+        birthday = request.form.get('inputBirthday', '')
+        language = request.form.get('selectLang', '')
+        agree_terms = request.form.get('flag', '')
+
+        # Print the values for debugging
+        print(f"Username: {username}")
+        print(f"First Name: {first_name}")
+        print(f"Last Name: {last_name}")
+        print(f"Expertise: {expertise}")
+        print(f"Website: {website}")
+        print(f"GitHub: {github}")
+        print(f"Twitter: {twitter}")
+        print(f"Facebook: {facebook}")
+        print(f"Instagram: {instagram}")
+        print(f"University Name: {university_name}")
+        print(f"Experience: {experience}")
+        print(f"Gender: {gender}")
+        print(f"Location: {location}")
+        print(f"Email: {email}")
+        print(f"Phone: {phone}")
+        print(f"Birthday: {birthday}")
+        print(f"Language: {language}")
+        print(f"Agree to Terms: {agree_terms}")
+
+        # Your further processing logic goes here
+
+        # Return a response (you can customize this based on your needs)
+        return render_template('login.html')
+
+
+
+
 
 
 if __name__ == '__main__':
