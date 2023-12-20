@@ -1,6 +1,7 @@
 from flask import *
 from pyrebase import *
-from algorithm import Algorithm
+#from algorithm import Algorithm
+import sqlite3
 import requests
 import time 
 from datetime import timedelta
@@ -154,30 +155,11 @@ def signup():
             
             if is_teacher==True :
 
-                if request.method == 'POST':
-
-                
-                    inputUsername = request.form.get('inputUsername') 
-                    inputFirstname =  request.form.get('inputFirstname')
-                    inputLastname = request.form.get('inputLastname')
-                    inputexpertise =request.form.get('inputexpertise')
-                    inputwebsite = request.form.get('inputwebsite')
-                    inputgithub = request.form.get('inputgithub')
-                    inputtwitter = request.form.get('inputtwitter')
-                    inputfacebook = request.form.get('inputfacebook')
-                    inputinstagram = request.form.get('inputinstagram')
-                    inputOrgName = request.form.get('inputOrgName')
-                    inputExperience = request.form.get('inputExperience')
-                    selectGender = request.form.get('selectGender')
-                    inputLocation = request.form.get('inputLocation')
-                    inputEmailAddress = request.form.get('inputEmailAddress')
-                    inputPhone = request.form.get('inputPhone')
-                    inputBirthday = request.form.get('inputBirthday')
-                    selectLang = request.form.get('selectLang')
+  
 
                     
 
-                return(render_template('teacher_login.html',inputUsername = inputUsername , inputFirstname =  inputFirstname,inputLastname = inputLastname,inputexpertise =inputexpertise,inputwebsite = inputwebsite,inputgithub = inputgithub,inputtwitter = inputtwitter,inputfacebook = inputfacebook,inputinstagram = inputinstagram,inputOrgName = inputOrgName,inputExperience = inputExperience,selectGender = selectGender,inputLocation = inputLocation,inputEmailAddress = inputEmailAddress,inputPhone = inputPhone,inputBirthday = inputBirthday,selectLang = selectLang ))
+                return(render_template('teacher_login.html'))
             else:
                 return(render_template('personal_details.html'))
            
@@ -499,22 +481,17 @@ def submit_form():
         topics_interested = request.form['inputBirthday']
         level = request.form['selectedLevel']
 
+        conn = sqlite3.connect('gyaanConnect.db')
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?,?)",(email, username, first_name+last_name, university_name, gender, location,phone_number, birthday, course_enrolled, topics_interested, level))
+        cursor.execute("INSERT INTO gyx VALUES(?,?,?)",(calculate_total_time(),email,0))
+        conn.close()
+
         # Do something with the data (e.g., save to a database)
         # For now, just print the data
-        print(f"Username: {username}")
-        print(f"First Name: {first_name}")
-        print(f"Last Name: {last_name}")
-        print(f"University Name: {university_name}")
-        print(f"Gender: {gender}")
-        print(f"Location: {location}")
-        print(f"Email: {email}")
-        print(f"Phone Number: {phone_number}")
-        print(f"Birthday: {birthday}")
-        print(f"Course Enrolled: {course_enrolled}")
-        print(f"Topics Interested: {topics_interested}")
-        print(f"Level: {level}")
 
         # Return a response (you can customize this based on your needs)
+        print('successful')
         return render_template('login.html')
 
 
