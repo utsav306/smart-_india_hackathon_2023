@@ -1,10 +1,13 @@
 from flask import *
 from pyrebase import *
+from algorithm import Algorithm
 import requests
 import time 
 from datetime import timedelta
 from flask_socketio import SocketIO, emit
 from threading import Thread, Event
+import os
+from googleapiclient.discovery import build
 
 
 app = Flask(__name__)
@@ -48,6 +51,30 @@ def calculate_total_time():
       ##  print(f"Total Time Spent: {total_time_spent} seconds")
         session.pop('start_time', None)
         return total_time_spent
+    
+def youtube_search_topic(api_key, query, max_results=10):
+        # Set up the YouTube Data API
+        youtube = build('youtube', 'v3', developerKey=api_key)
+
+        # Call the search.list method to retrieve search results
+        search_response = youtube.search().list(
+            q=query,
+            type='video',
+            part='id,snippet',
+            maxResults=max_results
+        ).execute()
+
+        # Extract video details from the search results
+        videos = []
+        for search_result in search_response.get('items', []):
+            video = {
+                'title': search_result['snippet']['title'],
+                'video_id': search_result['id']['videoId'],
+                'url': f'https://www.youtube.com/watch?v={search_result["id"]["videoId"]}'
+            }
+            videos.append(video)
+
+        return videos
         
 #time calculation
 @app.before_request
@@ -125,8 +152,32 @@ def signup():
             auth.update_profile(user["idToken"], display_name = newname)
 
             
-            if is_teacher==True:
-                return(render_template('teacher_login.html'))
+            if is_teacher==True :
+
+                if request.method == 'POST':
+
+                
+                    inputUsername = request.form.get('inputUsername') 
+                    inputFirstname =  request.form.get('inputFirstname')
+                    inputLastname = request.form.get('inputLastname')
+                    inputexpertise =request.form.get('inputexpertise')
+                    inputwebsite = request.form.get('inputwebsite')
+                    inputgithub = request.form.get('inputgithub')
+                    inputtwitter = request.form.get('inputtwitter')
+                    inputfacebook = request.form.get('inputfacebook')
+                    inputinstagram = request.form.get('inputinstagram')
+                    inputOrgName = request.form.get('inputOrgName')
+                    inputExperience = request.form.get('inputExperience')
+                    selectGender = request.form.get('selectGender')
+                    inputLocation = request.form.get('inputLocation')
+                    inputEmailAddress = request.form.get('inputEmailAddress')
+                    inputPhone = request.form.get('inputPhone')
+                    inputBirthday = request.form.get('inputBirthday')
+                    selectLang = request.form.get('selectLang')
+
+                    
+
+                return(render_template('teacher_login.html',inputUsername = inputUsername , inputFirstname =  inputFirstname,inputLastname = inputLastname,inputexpertise =inputexpertise,inputwebsite = inputwebsite,inputgithub = inputgithub,inputtwitter = inputtwitter,inputfacebook = inputfacebook,inputinstagram = inputinstagram,inputOrgName = inputOrgName,inputExperience = inputExperience,selectGender = selectGender,inputLocation = inputLocation,inputEmailAddress = inputEmailAddress,inputPhone = inputPhone,inputBirthday = inputBirthday,selectLang = selectLang ))
             else:
                 return(render_template('personal_details.html'))
            
@@ -342,6 +393,21 @@ def personal_details():
 
     return render_template('personal_details.html')
 
+@app.route('/searchQuery', methods = ['GET','POST'])
+def searchQuery():
+    if request.method == 'POST':
+        query = request.form["query"]
+           
+        api_key = 'AIzaSyAMtysCv1YSFqck6UOtdpZWYuZ1qzGGNWY'
+        search_results = youtube_search_topic(api_key, query)
+
+        for result in search_results:
+            print(f'Title: {result["title"]}')
+            print(f'Video ID: {result["video_id"]}')
+            print(f'URL: {result["url"]}')
+            print('\n')
+
+    return render_template('index.html')
 
 
 

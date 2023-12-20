@@ -1,4 +1,5 @@
 #module importing
+from MODULE_TEST import *
 
 
 #for csv files operation
@@ -27,7 +28,18 @@ def csv_datasheet():
     return csv_data
 
 
+def create_csv(filename,email_id):
+    
+    with open(f"user{email_id}.csv",'w') as user_preference_file:
+        writer = csv.writer(user_preference_file,delimiter=',')
 
+
+
+
+
+
+
+        
 #-----------------function for dataset loaded for comparision----------------------
 
 
@@ -47,6 +59,20 @@ def fetching_dataset(csv_file):
     
     return data_sheet
 
+#--------------------creating the stats for the playlist-----------------------------
+
+subject_choice = input("What do you want to study? e.g Python, Java, C++, Maths etc - ").lower()
+dic = {subject_choice: []}
+
+for count, subject in enumerate(fetching_dataset(csv_datasheet)["subject"]):
+    if subject_choice in subject.lower():
+        dic[subject_choice].append(fetching_dataset(csv_datasheet)["rec_link"][count])
+
+for key in dic.values():
     
+    pass
+
+
+
     
 

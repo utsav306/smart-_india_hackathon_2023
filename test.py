@@ -1,13 +1,14 @@
 ####CHANNEL ID 
 from pytube import *
 
+
 # cid = YouTube('https://www.youtube.com/watch?v=5qtC-tsQ-wE').channel_id
 # print(cid)
 
 class YTStats():
 
     def __init__(self,api_key):
-        #self.channelId = channel_id
+        #eself.channelId = channel_id
         self.apiKey = api_key 
         self.channel_stats = None
     
@@ -23,8 +24,7 @@ class YTStats():
         url = f"https://www.googleapis.com/youtube/v3/videos?id={video_ids}&key={self.apiKey}&part=snippet,contentDetails,statistics,status"
 
         return url
-
-
+    
 
 '''getting video ids of of urls'''
 
