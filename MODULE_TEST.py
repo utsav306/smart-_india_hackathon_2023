@@ -32,6 +32,7 @@ yt = YTStats(API_KEY)
 
 
 def post_video_stats(playlist_url):
+    video_stats_list = []
     count = 0
     for x in (get_video_ids(playlist_url)[0]):
 
@@ -66,8 +67,9 @@ def post_video_stats(playlist_url):
 
         count+=1
 
-        return (playlist_url,video_url,video_id,title_of_video,tags_of_video,channel_title,video_thumbnail,duration_of_video,video_views,video_likes,video_comments_count,)
-
+        video_stats_list.append([playlist_url,video_url,video_id,title_of_video,tags_of_video,channel_title,video_thumbnail,duration_of_video,video_views,video_likes,video_comments_count])
+    
+    return video_stats_list
     
     
 # ids = get_video_ids("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g")
@@ -81,3 +83,4 @@ def post_video_stats(playlist_url):
 # print(video_views,video_likes,video_comments_count)
         
 # url = get_video_ids("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g")[0]
+post_video_stats("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g")

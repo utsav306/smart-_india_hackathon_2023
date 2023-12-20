@@ -18,7 +18,13 @@
 # print(time_parse("PT2H1M59S"))
 
 ####CHANNEL ID 
-from pytube import *
+# from pytube import *
 
-cid = YouTube('https://www.youtube.com/watch?v=5qtC-tsQ-wE').channel_id
-print(cid)
+# cid = YouTube('https://www.youtube.com/watch?v=5qtC-tsQ-wE').channel_id
+# print(cid)
+
+
+from MODULE_TEST import *
+
+print(post_video_stats("https://youtube.com/playlist?list=PLU6SqdYcYsfJV8Lfq4KFA0U8kGeJ2NGWV&si=zq8VtON19aU-aL6g"))
+
