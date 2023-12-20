@@ -6,9 +6,10 @@ from datetime import timedelta
 from flask_socketio import SocketIO, emit
 from threading import Thread, Event
 
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SECRET_KEY'
-socketio = SocketIO(app)
+
 #---------------initializeing application------------------------
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
@@ -309,7 +310,6 @@ def forgot_password():
     else:
         return render_template('forgot_password.html')
 
-
 @app.route('/livechat')
 def livechat():
     if 'user' in session:
@@ -413,8 +413,20 @@ def update_total_time():
 
 
 
+'''@app.route('/livechat')
+def livechat():
+    if 'user' in session:
+        user_id_token = session['user']["idToken"]
+        auth.refresh(session['user']['refreshToken'])
+        user = auth.get_account_info(user_id_token)['users'][0]
+        first_name = "" if "displayName" not in user else user['displayName'].split()[0]
+
+        return render_template('live_server.html', first_name=first_name)
+    else:
+        return redirect('/login')'''
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
     
