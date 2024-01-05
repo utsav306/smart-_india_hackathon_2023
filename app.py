@@ -523,37 +523,63 @@ def livechat():
     else:
         return redirect('/login')'''
 
-
+@app.route('/submit_teacher_form', methods=['POST'])
 def submit_teacher_form():
-    if request.method == 'POST':
-        # Print the entire form data
-        print("Teacher Form Data:", request.form)
-
-        # Retrieve form data
-        username = request.form.get('inputUsername', '')
-        first_name = request.form.get('inputFirstName', '')
-        last_name = request.form.get('inputLastName', '')
-        expertise = request.form.get('inputexpertise', '')
-        website = request.form.get('inputwebsite', '')
+    
+        # Fetch form data
+        username = request.form['inputUsername']
+        first_name = request.form['inputFirstName']
+        last_name = request.form['inputLastName']
+        expertise = request.form['inputexpertise']
+        website = request.form.get('inputwebsite', '')  # Use get() to handle optional fields
         github = request.form.get('inputgithub', '')
         twitter = request.form.get('inputtwitter', '')
         facebook = request.form.get('inputfacebook', '')
         instagram = request.form.get('inputinstagram', '')
         university_name = request.form.get('inputOrgName', '')
-        experience = request.form.get('inputExperience', '')
-        gender = request.form.get('selectGender', '')
+        experience = request.form['inputExperience']  # Convert to int assuming it's a number
+        gender = request.form['selectGender']
         location = request.form.get('inputLocation', '')
-        email = request.form.get('inputEmailAddress', '')
-        phone = request.form.get('inputPhone', '')
-        birthday = request.form.get('inputBirthday', '')
-        language = request.form.get('selectLang', '')
+        email = request.form['inputEmailAddress']
+        phone = request.form['inputPhone']
+        birthday = request.form['inputBirthday']
+        language = request.form['selectLang']
         agree_terms = request.form.get('flag', '')
 
-        # Your further processing logic goes here
+        # Print the values for debugging
+        print(f"Username: {username}")
+        print(f"First Name: {first_name}")
+        print(f"Last Name: {last_name}")
+        print(f"Expertise: {expertise}")
+        print(f"Website: {website}")
+        print(f"GitHub: {github}")
+        print(f"Twitter: {twitter}")
+        print(f"Facebook: {facebook}")
+        print(f"Instagram: {instagram}")
+        print(f"University Name: {university_name}")
+        print(f"Experience: {experience}")
+        print(f"Gender: {gender}")
+        print(f"Location: {location}")
+        print(f"Email: {email}")
+        print(f"Phone: {phone}")
+        print(f"Birthday: {birthday}")
+        print(f"Language: {language}")
+        print(f"Agree to Terms: {agree_terms}")
 
-        # Return a response (you can customize this based on your needs)
-        return render_template('login.html')
+        return render_template('index.html')  # You can create a success page
 
+
+
+'''@app.route('/search', methods=['POST'])
+def search_route():
+    # Handle the form submission here
+    # You can access form data using request.form
+   
+
+    # Perform any necessary actions with the form data
+
+    # For example, you can render a template with the search results
+    return render_template('suggestions.html')'''
 
 
 rooms = {}
