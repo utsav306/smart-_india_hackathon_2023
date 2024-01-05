@@ -64,13 +64,12 @@ def fetching_dataset(csv_file):
 subject_choice = input("What do you want to study? e.g Python, Java, C++, Maths etc - ").lower()
 dic = {subject_choice: []}
 
+
 for count, subject in enumerate(fetching_dataset(csv_datasheet)["subject"]):
     if subject_choice in subject.lower():
         dic[subject_choice].append(fetching_dataset(csv_datasheet)["rec_link"][count])
 
-for key in dic.values():
-    
-    pass
+
 
 
 

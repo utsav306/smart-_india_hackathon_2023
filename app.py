@@ -1,6 +1,6 @@
 from flask import *
 from pyrebase import *
-#from algorithm import Algorithm
+from algorithm import Algorithm
 import sqlite3
 import requests
 import time 
@@ -9,10 +9,14 @@ from flask_socketio import SocketIO, emit
 from threading import Thread, Event
 import os
 from googleapiclient.discovery import build
+from flask_socketio import join_room, leave_room, send, SocketIO
+import random
+from string import ascii_uppercase
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SECRET_KEY'
+socketio = SocketIO(app)
 
 #---------------initializeing application------------------------
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -41,6 +45,7 @@ auth = firebase.auth()
 
 app.secret_key = "SECRET_KEY"
 
+
 #-----------------------page routes-----------------------------------------
 #time calculation
 
@@ -53,7 +58,7 @@ def calculate_total_time():
         session.pop('start_time', None)
         return total_time_spent
     
-def youtube_search_topic(api_key, query, max_results=10):
+def youtube_search_topic(api_key, query, max_results=2):
         # Set up the YouTube Data API
         youtube = build('youtube', 'v3', developerKey=api_key)
 
@@ -102,8 +107,18 @@ def home():
             auth.refresh(session['user']['refreshToken'])
             user = auth.get_account_info(user_id_token)['users'][0]
             first_name = user.get('displayName', '').split()[0] if 'displayName' in user else "!"
+
+            # conn = sqlite3.connect('gyaanConnect.db')
+            # cursor = conn.cursor()
+            # cursor.execute("SELECT TOPIC FROM USER")
+            # topic = cursor.fetchall()
+            # print(topic)
+            
+
+
+
             button1id = "hello"
-            video1 = "https://youtu.be/RJ733wzbNoA?si=IvSEKKoq30G3qidP"
+            video1 = "https://www.youtube.com/watch?v=vLqTf2b6GZw&pp=ygUGcHl0aG9u"
             like1="1000"
             view1="10K"
             thumbnail1="Python tutorial for beginners"
@@ -112,7 +127,7 @@ def home():
             title1 = "Python Full Course for free 🐍"
 
             button2id = "hello"
-            video2 = "Python for beginners"
+            video2 = "https://www.youtube.com/watch?v=DInMru2Eq6E&pp=ygUGcHl0aG9u"
             title2 = "15 Minute Python Tutorial For Beginners In Hindi (Full &amp; Complete Python Crash Course)"
             like2="1000"
             view2="20K"
@@ -249,7 +264,7 @@ def dashboard():
         login_phone="123456789"
         login_mobile="032145687"
         login_address="abcdefgh"
-        gyx_credits=10
+        gyx_credits=5
         login_full_name="Utsav Tiwari"
         login_address="Student"
         login_course="Btech"
@@ -343,29 +358,29 @@ def forgot_password():
     else:
         return render_template('forgot_password.html')
 
-@app.route('/livechat')
-def livechat():
-    if 'user' in session:
+# @app.route('/livechat')
+# def livechat():
+#     if 'user' in session:
 
-        #signed user    
+#         #signed user
         
-        user_id_token = session['user']["idToken"]
+#         user_id_token = session['user']["idToken"]
         
-        auth.refresh(session['user']['refreshToken'])
+#         auth.refresh(session['user']['refreshToken'])
 
-        user = auth.get_account_info(user_id_token)['users'][0]
+#         user = auth.get_account_info(user_id_token)['users'][0]
         
-        first_name = ""
+#         first_name = ""
         
-        if "displayName" not in user:
-            first_name = "!"
-        else:
-            first_name = user['displayName'].split()[0]
+#         if "displayName" not in user:
+#             first_name = "!"
+#         else:
+#             first_name = user['displayName'].split()[0]
 
-        return render_template('working.html', first_name=first_name)
+#         return render_template('working.html', first_name=first_name)
 
-    else:
-        return render_template('working.html')
+#     else:
+#         return render_template('homee.html')
     
 
 
@@ -478,7 +493,7 @@ def submit_form():
         phone_number = request.form['inputPhone']
         birthday = request.form['inputBirthday']
         course_enrolled = request.form['inputenrolled']
-        topics_interested = request.form['inputBirthday']
+        topics_interested = request.form['topics']
         level = request.form['selectedLevel']
 
         conn = sqlite3.connect('gyaanConnect.db')
@@ -534,26 +549,6 @@ def submit_teacher_form():
         language = request.form.get('selectLang', '')
         agree_terms = request.form.get('flag', '')
 
-        # Print the values for debugging
-        print(f"Username: {username}")
-        print(f"First Name: {first_name}")
-        print(f"Last Name: {last_name}")
-        print(f"Expertise: {expertise}")
-        print(f"Website: {website}")
-        print(f"GitHub: {github}")
-        print(f"Twitter: {twitter}")
-        print(f"Facebook: {facebook}")
-        print(f"Instagram: {instagram}")
-        print(f"University Name: {university_name}")
-        print(f"Experience: {experience}")
-        print(f"Gender: {gender}")
-        print(f"Location: {location}")
-        print(f"Email: {email}")
-        print(f"Phone: {phone}")
-        print(f"Birthday: {birthday}")
-        print(f"Language: {language}")
-        print(f"Agree to Terms: {agree_terms}")
-
         # Your further processing logic goes here
 
         # Return a response (you can customize this based on your needs)
@@ -561,10 +556,100 @@ def submit_teacher_form():
 
 
 
+rooms = {}
 
+def generate_unique_code(length):
+    while True:
+        code = ""
+        for _ in range(length):
+            code += random.choice(ascii_uppercase)
+        
+        if code not in rooms:
+            break
+    
+    return code
+
+@app.route("/homee", methods=["POST", "GET"])
+def homee():
+    session.clear()
+    if request.method == "POST":
+        name = request.form.get("name")
+        code = request.form.get("code")
+        join = request.form.get("join", False)
+        create = request.form.get("create", False)
+
+        if not name:
+            return render_template("homee.html", error="Please enter a name.", code=code, name=name)
+
+        if join != False and not code:
+            return render_template("homee.html", error="Please enter a room code.", code=code, name=name)
+        
+        room = code
+        if create != False:
+            room = generate_unique_code(4)
+            rooms[room] = {"members": 0, "messages": []}
+        elif code not in rooms:
+            return render_template("homee.html", error="Room does not exist.", code=code, name=name)
+        
+        session["room"] = room
+        session["name"] = name
+        return redirect(url_for("room"))
+
+    return render_template("homee.html")
+
+@app.route("/room")
+def room():
+    room = session.get("room")
+    if room is None or session.get("name") is None or room not in rooms:
+        return redirect(url_for("homee"))
+
+    return render_template("room.html", code=room, messages=rooms[room]["messages"])
+
+@socketio.on("message")
+def message(data):
+    room = session.get("room")
+    if room not in rooms:
+        return 
+    
+    content = {
+        "name": session.get("name"),
+        "message": data["data"]
+    }
+    send(content, to=room)
+    rooms[room]["messages"].append(content)
+    print(f"{session.get('name')} said: {data['data']}")
+
+@socketio.on("connect")
+def connect(auth):
+    room = session.get("room")
+    name = session.get("name")
+    if not room or not name:
+        return
+    if room not in rooms:
+        leave_room(room)
+        return
+    
+    join_room(room)
+    send({"name": name, "message": "has entered the room"}, to=room)
+    rooms[room]["members"] += 1
+    print(f"{name} joined room {room}")
+
+@socketio.on("disconnect")
+def disconnect():
+    room = session.get("room")
+    name = session.get("name")
+    leave_room(room)
+
+    if room in rooms:
+        rooms[room]["members"] -= 1
+        if rooms[room]["members"] <= 0:
+            del rooms[room]
+    
+    send({"name": name, "message": "has left the room"}, to=room)
+    print(f"{name} has left the room {room}")  
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
+    socketio.run(app, debug=True)
     
