@@ -265,7 +265,7 @@ def dashboard():
         else:
             first_name = user['displayName'].split()[0]
 
-        return render_template('dashboard.html', first=first_name,login=login_name,login_email=login_email,login_phone=login_phone, login_mobile=login_mobile,login_address=login_address,gyx_credit=gyx_credits,login_full_name=login_full_name,login_course=login_course)
+        return render_template('teachers_dashboard.html', first=first_name,login=login_name,login_email=login_email,login_phone=login_phone, login_mobile=login_mobile,login_address=login_address,gyx_credit=gyx_credits,login_full_name=login_full_name,login_course=login_course)
 
 
     else:
