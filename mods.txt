@@ -1,0 +1,8 @@
+pytube 
+requests
+flask 
+pyrebase4 
+openpyxl 
+threading
+googleapiclient.discovery
+flask_socketio
