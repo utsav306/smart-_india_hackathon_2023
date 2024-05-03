@@ -245,7 +245,6 @@ def logout():
 
 
 @app.route('/dashboard')
-
 def dashboard():
     
     if 'user' in session:
